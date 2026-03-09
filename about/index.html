@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2589d4",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a",
+                        "navy-custom": "#1e293b",
+                        "slate-custom": "#475569",
+                        "lavender-muted": "#1e293b"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "8px", "lg": "12px", "xl": "16px", "full": "9999px"},
+                },
+            },
+        }</script>
+<title>About | Inwoo Lee Portfolio</title>
+</head>
+<body class="bg-white font-display text-slate-900">
+<div class="relative flex h-auto min-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid px-6 py-4 lg:px-40 bg-white border-slate-200 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-navy-custom dark:text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-navy-custom text-lg font-bold leading-tight tracking-[-0.015em]">Inwoo Lee</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9"><a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/">Home</a><a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">About</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/projects">Projects</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/publications">Publications</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../Inwoo_Resume.pdf" download>Resume</a>
+<div class="relative contact-dropdown">
+<button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-slate-600 text-sm font-medium hover:text-primary transition-colors">Contact</button>
+<div class="contact-menu hidden absolute right-0 top-8 bg-white rounded-xl shadow-lg border border-slate-100 p-4 flex flex-col gap-3 min-w-[200px] z-50">
+<a href="mailto:yonwo55@gmail.com" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Email</span>
+</a>
+<a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>LinkedIn</span>
+</a>
+</div>
+</div></nav>
+<button onclick="handleShare()" class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-4 gap-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="hidden sm:inline">Share</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-6 lg:px-40 py-12">
+<div class="max-w-[960px] mx-auto">
+<!-- Profile Header -->
+<section class="flex flex-col md:flex-row gap-8 items-start mb-16">
+<div class="w-full md:w-1/3 flex justify-center md:justify-start">
+<div class="rounded-full w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30 shadow-xl shadow-primary/10 overflow-hidden">
+<img src="../이미지/인우사진2.jpg" alt="Professional headshot of Inwoo Lee in a formal setting" class="w-full h-full object-cover">
+</div>
+</div>
+<div class="w-full md:w-2/3 flex flex-col justify-center">
+<div class="mb-6">
+<h1 class="text-navy-custom text-4xl font-bold leading-tight tracking-tight mb-2">Inwoo Lee</h1>
+<p class="text-primary dark:text-primary text-xl font-semibold tracking-tight">Geopolitical &amp; Technology Strategy Analyst</p>
+</div>
+<p class="text-slate-700 text-lg leading-relaxed mb-6">
+                            Analyst focused on the intersection of technology, economics, and national security, with particular expertise in US-China competition. I produce decision-relevant intelligence for government and institutional stakeholders, covering foreign policy, capital flows, industrial strategy, and AI and semiconductor competition. My analytical products range from rapid-turn briefings to in-depth assessments, translating Mandarin-language primary sources (policy documents, financial disclosures, technical publications) into actionable strategic judgments. Previously, I contributed to 24 commissioned research projects and delivered analytical products to senior officials at the Ministry of Foreign Affairs, Ministry of Unification, Korea Foundation, and other government institutions.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 tracking-wide">China &amp; East Asia Geopolitics</span>
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 tracking-wide">AI Competitive Landscape Analysis</span>
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 tracking-wide">Political Risk Assessment</span>
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 tracking-wide">Government &amp; National Security Briefings</span>
+<span class="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1 tracking-wide">Mandarin-Language Source Intelligence</span>
+<span class="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1 tracking-wide">Frontier AI &amp; Semiconductor Policy</span>
+<span class="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1 tracking-wide">Foreign Information Operations</span>
+<span class="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1 tracking-wide">Open-Source Intelligence (OSINT)</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Left Column: Education & Skills -->
+<div class="lg:col-span-1 space-y-12">
+<!-- Education Section -->
+<section>
+<h2 class="text-xl font-bold border-b-2 border-primary text-slate-900 dark:text-white inline-block mb-6">Education</h2>
+<div class="space-y-6">
+<div>
+<h3 class="font-bold text-navy-custom dark:text-slate-100">Indiana University Bloomington</h3>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-medium">M.S. Applied Statistics</p>
+<p class="text-slate-500 text-sm">2024 – 2026 (expected)</p>
+</div>
+<div>
+<h3 class="font-bold text-navy-custom dark:text-slate-100">Sungkyunkwan University, Seoul</h3>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-medium">M.A. Political Science</p>
+<p class="text-slate-500 text-sm">2019 – 2021</p>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-medium mt-2">B.A. Politics &amp; Diplomacy; B.A. Economics</p>
+<p class="text-slate-500 text-sm">2013 – 2019</p>
+<p class="text-slate-500 text-sm italic">Republic of Korea Air Force, Mandatory Military Service 2014–2016</p>
+</div>
+<div>
+<h3 class="font-bold text-navy-custom dark:text-slate-100">Renmin University (人民大学), Beijing</h3>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-medium">Government-Funded Exchange Program among Korea, China, and Japan</p>
+<p class="text-slate-500 text-sm">2017</p>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section>
+<h2 class="text-xl font-bold border-b-2 border-primary text-slate-900 dark:text-white inline-block mb-6">Technical &amp; Analytical Skills</h2>
+<div class="space-y-6">
+<div>
+<h4 class="text-xs font-bold text-navy-custom/50 dark:text-slate-400 uppercase tracking-widest mb-3">Geopolitical &amp; Strategic Intelligence</h4>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">AI competitive landscape tracking (compute, models, capital, policy)</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">China strategic behavior &amp; foreign policy analysis</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Political risk assessment</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Government &amp; national security stakeholder briefings</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Mandarin-language source intelligence (technical publications, state media, financial disclosures)</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Open-source intelligence (OSINT) &amp; competitive intelligence</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Foreign information operations &amp; narrative analysis</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Executive brief &amp; decision-product writing</span>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-navy-custom/50 dark:text-slate-400 uppercase tracking-widest mb-3">AI &amp; Research Methods</h4>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Topic modeling (BERTopic, LDA, NMF)</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">LLM-assisted semantic classification</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Regression modeling</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Data analysis for policy research</span>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-navy-custom/50 dark:text-slate-400 uppercase tracking-widest mb-3">Programming &amp; Tools</h4>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1">Python (NLP, data analysis)</span>
+<span class="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1">R (statistical modeling, regression analysis)</span>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-bold text-navy-custom/50 dark:text-slate-400 uppercase tracking-widest mb-3">Languages</h4>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Korean (Native)</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">English (Fluent)</span>
+<span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">Mandarin Chinese (Advanced, reading policy and media sources)</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Professional Experience -->
+<div class="lg:col-span-2">
+<section>
+<h2 class="text-xl font-bold border-b-2 border-primary text-slate-900 dark:text-white inline-block mb-6">Professional Experience</h2>
+<div class="relative pl-8 border-l border-slate-200 space-y-12">
+<!-- Experience 1: Indiana University Bloomington -->
+<div class="relative">
+<div class="absolute -left-[37px] top-1 size-4 rounded-full border-4 border-white dark:border-background-dark bg-primary shadow-sm shadow-primary/50"></div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Fall 2023 — Spring 2026 · 3 yrs</span>
+<h3 class="text-lg font-bold text-navy-custom dark:text-slate-100">Associate Instructor</h3>
+<p class="text-sm font-semibold text-navy-custom/70 dark:text-slate-400">Indiana University Bloomington · Full-time</p>
+<p class="text-sm text-slate-500">Department of Political Science</p>
+<p class="text-sm text-slate-500">Bloomington, Indiana, United States · On-site</p>
+</div>
+<div class="w-16 h-16 flex-shrink-0 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center p-2 shadow-sm">
+<img src="../로고/Indiana_Hoosiers_logo.svg.png" alt="Indiana University" class="max-h-full max-w-full object-contain"/>
+</div>
+</div>
+<div class="mb-2">
+<p class="text-xs font-bold text-navy-custom/50 dark:text-slate-400 uppercase tracking-widest mb-2">Courses Taught</p>
+<ul class="space-y-1 text-sm text-slate-700">
+<li><span class="text-slate-400 text-xs mr-2">Fall 2023</span>POLS-Y 335: West European Politics</li>
+<li><span class="text-slate-400 text-xs mr-2">Spring 2024</span>POLS-Y 100: American Political Controversies</li>
+<li><span class="text-slate-400 text-xs mr-2">Fall 2024</span>POLS-Y 211: Introduction to Law</li>
+<li><span class="text-slate-400 text-xs mr-2">Spring 2025</span>POLS-Y 100: American Political Controversies</li>
+<li><span class="text-slate-400 text-xs mr-2">Fall 2025</span>POLS-Y 103: Introduction to American Politics</li>
+<li><span class="text-slate-400 text-xs mr-2">Spring 2026</span>POLS-Y 103: Introduction to American Politics</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Experience 2: Korea Economic Cooperation Institute -->
+<div class="relative">
+<div class="absolute -left-[37px] top-1 size-4 rounded-full border-4 border-white dark:border-background-dark bg-primary shadow-sm shadow-primary/50"></div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Mar 2023 — Jul 2023 · 5 mos</span>
+<h3 class="text-lg font-bold text-navy-custom dark:text-slate-100">Research Project Manager</h3>
+<p class="text-sm font-semibold text-navy-custom/70 dark:text-slate-400">Korea Economic Cooperation Institute · Full-time</p>
+<p class="text-sm text-slate-500">Seoul, South Korea · Hybrid</p>
+<a href="http://www.kec.re.kr/" target="_blank" class="text-xs text-primary hover:underline">Institute Website (Korean)</a>
+</div>
+<div class="w-16 h-16 flex-shrink-0 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center p-2 shadow-sm">
+<img src="../로고/한경원_복제.png" alt="Korea Economic Cooperation Institute" class="max-h-full max-w-full object-contain"/>
+</div>
+</div>
+<p class="text-sm text-slate-600 mb-3">Managed three simultaneous government-contracted research projects for the Ministry of Data and Statistics, Ministry of Foreign Affairs, and Ministry of Economy and Finance, Republic of Korea.</p>
+<ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+<li>Prepared and delivered executive briefings and analytical summaries for senior government officials across three concurrent ministry engagements.</li>
+<li>Managed project budgets, timelines, and inter-agency communications, ensuring on-time delivery of analytical deliverables under strict government requirements.</li>
+<li>Served as primary liaison between research teams and government counterparts, coordinating policy workshops and closed-door briefing sessions.</li>
+</ul>
+</div>
+</div>
+<!-- Experience 2: SICS -->
+<div class="relative">
+<div class="absolute -left-[37px] top-1 size-4 rounded-full border-4 border-white dark:border-background-dark bg-primary shadow-sm shadow-primary/50"></div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Sep 2019 — Feb 2023 · 3 yrs 6 mos</span>
+<h3 class="text-lg font-bold text-navy-custom dark:text-slate-100">Researcher &amp; Project Manager</h3>
+<p class="text-sm font-semibold text-navy-custom/70 dark:text-slate-400">Sungkyun Institute for China Studies (SICS) · Full-time</p>
+<p class="text-sm text-slate-500">Seoul, South Korea · On-site</p>
+<a href="https://sics.skku.edu/sics/index.do" target="_blank" class="text-xs text-primary hover:underline">Institute Website (Korean)</a>
+</div>
+<div class="w-16 h-16 flex-shrink-0 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center p-2 shadow-sm">
+<img src="../로고/성중연.png" alt="Sungkyun Institute for China Studies" class="max-h-full max-w-full object-contain"/>
+</div>
+</div>
+<p class="text-sm text-slate-600 mb-3">SICS is a policy research institute at Sungkyunkwan University specializing in China, East Asian geopolitics, and international relations. Contributed to 24 commissioned research projects over 3.5 years.</p>
+<ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+<li>Produced decision-relevant analytical products on China's foreign policy, AI strategy, information operations, and regional security dynamics, delivered to senior officials and institutional leadership at the Ministry of Foreign Affairs, Ministry of Unification, and Korea Foundation.</li>
+<li>Led research on U.S.-China strategic technology competition, including AI semiconductor dynamics, export control regimes, and supply chain restructuring, synthesizing Mandarin-language technical and policy sources into actionable intelligence.</li>
+<li>Authored peer-reviewed analysis on China's data securitization and its implications for U.S.–China strategic competition (cited by the Institute for National Security Strategy, affiliated with Korea's National Intelligence Service).</li>
+<li>Organized and supported closed-door policy workshops and inter-agency briefings for government and academic stakeholders, coordinating contracts, deliverables, and cross-institutional communications.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="text-white py-12 px-6 md:px-20 border-t border-slate-800 bg-[#0f172a]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="text-xl font-bold">Inwoo Lee</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+Research, policy analysis, and strategic advisory work at the intersection of technology and global security.
+</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Contact</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> <a href="mailto:yonwo55@gmail.com" class="hover:text-white transition-colors">yonwo55@gmail.com</a></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">link</span> <a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Navigation</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+<li><a href="/projects" class="hover:text-white transition-colors">Projects</a></li>
+<li><a href="/publications" class="hover:text-white transition-colors">Publications</a></li>
+<li><a href="../Inwoo_Resume.pdf" download class="hover:text-white transition-colors">Resume</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center md:text-left text-xs text-slate-500">
+© 2026 Inwoo Lee Research Portfolio. All rights reserved. Built with analytical precision.
+</div>
+</footer>
+</div>
+</div>
+<div id="share-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-[9999]">
+  Link copied!
+</div>
+<script>
+async function handleShare() {
+  const url = window.location.href;
+  if (navigator.share) {
+    try { await navigator.share({ title: 'Inwoo Lee – Research Portfolio', url }); } catch(e) {}
+  } else {
+    await navigator.clipboard.writeText(url);
+    const toast = document.getElementById('share-toast');
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  }
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.contact-dropdown')) {
+    document.querySelectorAll('.contact-menu').forEach(m => m.classList.add('hidden'));
+  }
+});
+</script>
+</body></html>
