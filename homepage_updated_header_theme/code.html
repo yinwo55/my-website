@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inwoo Lee | Research Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2589d4",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a",
+                        "navy-custom": "#1e293b",
+                        "slate-custom": "#475569",
+                        "lavender-muted": "#1e293b"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "8px", "lg": "12px", "xl": "16px", "full": "9999px"},
+                },
+            },
+        }</script>
+</head>
+<body class="dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 bg-[#f8fafc]">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid px-6 py-4 lg:px-40 bg-white border-slate-200 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-navy-custom dark:text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-navy-custom text-lg font-bold leading-tight tracking-[-0.015em]">Inwoo Lee</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9"><a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Home</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../about_page_updated_header_theme/code.html">About</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../projects_page_updated_header_theme/code.html">Projects</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../publications_page_updated_header_theme/code.html">Publications</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../Inwoo_Resume.pdf" download>Resume</a>
+<div class="relative contact-dropdown">
+<button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-slate-600 text-sm font-medium hover:text-primary transition-colors">Contact</button>
+<div class="contact-menu hidden absolute right-0 top-8 bg-white rounded-xl shadow-lg border border-slate-100 p-4 flex flex-col gap-3 min-w-[200px] z-50">
+<a href="mailto:yonwo55@gmail.com" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Email</span>
+</a>
+<a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>LinkedIn</span>
+</a>
+</div>
+</div></nav>
+<button onclick="handleShare()" class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-4 gap-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="hidden sm:inline" id="share-btn-label">Share</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="max-w-7xl mx-auto px-6 md:px-20 py-12 md:py-24">
+<div class="flex flex-col gap-10 md:flex-row items-center">
+<div class="w-full md:w-1/2 aspect-video bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-2xl relative" data-alt="Digital representation of global AI governance networks" style="background-image: url('../이미지/main image.png'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col gap-6 md:w-1/2">
+<div class="flex flex-col gap-3">
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Geopolitics, Technology &amp; National Security Analysis</span>
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                                    Decoding Global Complexity
+                                </h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Tracking the intersection of technology, economics, and national security, with a focus on US-China competition. Covers foreign policy, capital flows, industrial strategy, and AI and semiconductor dynamics to produce decision-relevant analysis for government and institutional stakeholders.
+                                </p>
+</div>
+<div class="flex gap-4">
+<a href="../publications_page_updated_header_theme/code.html" class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-base font-bold transition-all hover:scale-105 text-slate-50">
+View Research
+</a>
+<a href="../Inwoo_Resume.pdf" download class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 border-2 border-primary/50 text-slate-900 dark:text-slate-100 text-base font-bold transition-all hover:bg-primary/10">
+  Download Resume
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Info -->
+<div class="py-12">
+<div class="max-w-7xl mx-auto px-6 md:px-20">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="rounded-full h-40 w-40 flex-shrink-0 border-4 border-white dark:border-slate-800 shadow-xl overflow-hidden">
+<img src="../이미지/인우사진2.jpg" alt="Professional portrait of researcher Inwoo Lee" class="w-full h-full object-cover">
+</div>
+<div class="flex flex-col justify-center text-center md:text-left">
+<p class="text-3xl font-bold tracking-tight">Inwoo Lee</p>
+<p class="text-primary text-lg font-medium">Geopolitical &amp; Technology Strategy Analyst</p>
+<p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+                                    Analyst focused on the intersection of technology, economics, and national security, with particular expertise in US-China competition. Produces decision-relevant intelligence for government and institutional stakeholders, covering foreign policy, capital flows, industrial strategy, and AI and semiconductor competition. Analysis draws on Mandarin-language primary sources and open-source methods.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Work Grid -->
+<div class="bg-slate-100 dark:bg-slate-900/20 py-20">
+<div class="max-w-7xl mx-auto px-6 md:px-20">
+<div class="flex justify-between items-end mb-12">
+<h2 class="text-3xl font-bold tracking-tight">Featured Work</h2>
+<a class="text-primary font-bold flex items-center gap-1" href="../publications_page_updated_header_theme/code.html">
+View Full Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Featured 1: Journal Article -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800 group flex flex-col">
+<div class="h-48 w-full bg-slate-200 shrink-0" style="background-image: url('../이미지/Data Securitization.png'); background-size: cover; background-position: center;">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-2 mb-2 flex-wrap">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Journal Article · 2021</span>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Korean</span>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">China's Data Securitization and Changes in U.S.-China Strategic Competition</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">Lee, I., &amp; Lee, H. <span class="italic">Korea &amp; World Politics</span>, 37(2), 217–251. · 5 citations · Cited by INSS</p>
+<a href="https://doi.org/10.17331/kwp.2021.37.2.006" target="_blank" rel="noopener noreferrer" class="text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all text-primary mt-auto">
+View Article <span class="material-symbols-outlined text-base">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Featured 2: Policy Report – AI Semiconductors -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800 group flex flex-col">
+<div class="h-48 w-full bg-slate-200 shrink-0" style="background-image: url('../이미지/AI semiconductor.png'); background-size: cover; background-position: center;">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Policy Report · 2023</span>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">The Race for Advanced Technology: AI Semiconductors and the Intensifying U.S.–China Tech Rivalry</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">Examines export controls, supply chain restructuring, and alliance politics reshaping the global semiconductor industry.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xs text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-sm">lock</span> Full version not available</span>
+<button onclick="document.getElementById('home-modal-ai-semi').classList.remove('hidden')" class="text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all text-primary">
+View Summary <span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured 3: Policy Report – AI Discourse -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800 group flex flex-col">
+<div class="h-48 w-full bg-slate-200 shrink-0" style="background-image: url('../이미지/AI competition as Discourse Competition.png'); background-size: cover; background-position: center;">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 block">Policy Report · 2025</span>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">AI Competition as Discourse Competition: The Vulnerabilities and Strategic Risks of Large Language Models</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-1">Analyzes how LLMs reshape information competition and political discourse across geopolitical boundaries.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-xs text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-sm">lock</span> Full version not available</span>
+<button onclick="document.getElementById('home-modal-llm').classList.remove('hidden')" class="text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all text-primary">
+View Summary <span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Research Timeline Section -->
+<div class="max-w-7xl mx-auto px-6 md:px-20 py-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold tracking-tight">Projects</h2>
+<p class="text-slate-600 dark:text-slate-400">Aggregated research output growth from 2019 to 2022</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-5">
+<!-- 2019 -->
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 font-bold">2019</p>
+<span class="material-symbols-outlined text-primary/40">show_chart</span>
+</div>
+<p class="text-4xl font-black">1</p>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-24 rounded-lg flex items-end">
+<div class="bg-primary/40 w-full h-[10%] rounded-b-lg"></div>
+</div>
+</div>
+<!-- 2020 -->
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 font-bold">2020</p>
+<span class="material-symbols-outlined text-primary/60">show_chart</span>
+</div>
+<p class="text-4xl font-black">6</p>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-24 rounded-lg flex items-end">
+<div class="bg-primary/60 w-full h-[60%] rounded-b-lg"></div>
+</div>
+</div>
+<!-- 2021 -->
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 font-bold">2021</p>
+<span class="material-symbols-outlined text-primary/80">show_chart</span>
+</div>
+<p class="text-4xl font-black">10</p>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-24 rounded-lg flex items-end">
+<div class="bg-primary/80 w-full h-[100%] rounded-b-lg"></div>
+</div>
+</div>
+<!-- 2022 -->
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 font-bold">2022</p>
+<span class="material-symbols-outlined text-primary">show_chart</span>
+</div>
+<p class="text-4xl font-black">7</p>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-24 rounded-lg flex items-end">
+<div class="bg-primary w-full h-[70%] rounded-b-lg"></div>
+</div>
+</div>
+<!-- 2023 -->
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 font-bold">2023</p>
+<span class="material-symbols-outlined text-primary">show_chart</span>
+</div>
+<p class="text-4xl font-black">3</p>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-24 rounded-lg flex items-end">
+<div class="bg-primary w-full h-[30%] rounded-b-lg"></div>
+</div>
+</div></div>
+</div><div class="dark:bg-[#0f172a] py-16 border-t border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 md:px-20">
+<h2 class="text-center text-sm font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-12">Institutional Collaboration</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-y-10 md:gap-x-6">
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/KF.png" alt="Korea Foundation" style="height:64px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/KIEP.png" alt="KIEP" style="height:64px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/MOFA.png" alt="Ministry of Foreign Affairs" style="height:59px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/MOSF.png" alt="Ministry of Strategy and Finance" style="height:64px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/MODS.png" alt="Ministry of National Defense" style="height:59px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/MOU.png" alt="Ministry of Unification" style="width:100%; height:auto;" class="object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/Konrad_Adenauer.png" alt="Konrad Adenauer Foundation" style="height:48px;" class="max-w-full w-auto object-contain"/>
+</div>
+<div class="flex items-center justify-center h-20 w-full px-2">
+<img src="../로고/Amore_Pacific.png" alt="AmorePacific" style="height:88px;" class="max-w-full w-auto object-contain"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Partners -->
+</main>
+
+<!-- Modal: AI Semiconductors -->
+<div id="home-modal-ai-semi" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary · Policy Report 2023</span>
+<button onclick="document.getElementById('home-modal-ai-semi').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">The Race for Advanced Technology: AI Semiconductors and the Intensifying U.S.–China Tech Rivalry</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report examines the intensifying technological competition between the United States and China with a particular focus on the strategic role of AI semiconductors. As advanced technologies increasingly shape geopolitical power, semiconductors have emerged as a critical component in determining leadership in the Fourth Industrial Revolution. According to the report, countries that dominate key technological sectors (such as artificial intelligence, quantum computing, and semiconductor manufacturing) are likely to shape the future global order.</p>
+<p>The report analyzes recent U.S. policies aimed at constraining China's semiconductor development. Washington has implemented export controls targeting advanced computing and semiconductor manufacturing technologies while also pursuing industrial policies designed to strengthen domestic semiconductor production. These measures include restrictions on advanced chip exports and broader efforts to restructure global semiconductor supply chains around allied economies. The report notes that these policies aim to slow China's development of an independent advanced semiconductor ecosystem.</p>
+<p>At the same time, China has been actively developing strategies to mitigate the effects of these restrictions. The report highlights China's efforts to expand domestic semiconductor capabilities through technological alternatives such as chiplet architectures and next-generation semiconductor materials. China is also attempting to circumvent export controls by relying on cloud computing services and alternative hardware solutions to sustain its AI development ecosystem.</p>
+<p>Finally, the report evaluates the strategic implications for South Korea, one of the world's leading semiconductor producers. While Korea possesses strong capabilities in memory semiconductor manufacturing and a highly developed industrial ecosystem, it also faces structural vulnerabilities in areas such as fabless design, semiconductor equipment, and specialized materials. The report concludes that Korea must carefully navigate the emerging technology blocs created by the U.S.–China rivalry and leverage initiatives such as the proposed "Chip 4" alliance to secure stable semiconductor supply chains while maintaining its technological competitiveness.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: LLM Discourse -->
+<div id="home-modal-llm" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary · Policy Report 2025</span>
+<button onclick="document.getElementById('home-modal-llm').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">AI Competition as Discourse Competition: The Vulnerabilities and Strategic Risks of Large Language Models</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report analyzes how the rapid diffusion of large language models (LLMs) is transforming the global information environment and creating new arenas of strategic competition. Conversational AI systems such as ChatGPT, Gemini, Bing AI, and DeepSeek are increasingly used as tools for information retrieval and content generation, reaching hundreds of millions of users worldwide. As these systems become embedded in everyday information consumption, they increasingly shape how political narratives and public discourse are produced and disseminated.</p>
+<p>A central argument of the report is that the political bias of LLM outputs is not solely a technological issue but is deeply connected to the information ecosystems and data governance systems in which these models are trained. For example, models developed in highly regulated information environments may incorporate state-driven information constraints into their responses. The report highlights the case of China's DeepSeek model, which demonstrates response restrictions or evasive answers on politically sensitive topics due to the structure of China's information governance system.</p>
+<p>The report also presents empirical comparisons between ChatGPT and DeepSeek by asking hundreds of political and scientific questions in Korean, English, and Chinese. The findings show that while the two models produce highly consistent answers in scientific questions, their responses diverge significantly on political topics. According to the analysis, scientific questions show over 90% agreement across models, whereas political questions show agreement rates of roughly 60%, reflecting the influence of political context and training data.</p>
+<p>Language also plays a significant role in shaping model responses. Responses to political questions vary substantially depending on the language used in prompts. In particular, certain geopolitical issues — such as the THAAD deployment controversy between South Korea and China — produce markedly different answers depending on whether the question is asked in Korean, English, or Chinese.</p>
+<p>The report concludes that LLMs should be understood not merely as information tools but as active producers of discourse capable of influencing political narratives and public opinion. In an era of geopolitical rivalry and information warfare, the spread of AI-generated content raises concerns about foreign influence operations, cognitive warfare, and the manipulation of national information environments.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="text-white py-12 px-6 md:px-20 border-t border-slate-800 bg-[#0f172a]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="text-xl font-bold">Inwoo Lee</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                            Research, policy analysis, and strategic advisory work at the intersection of technology and global security.
+                        </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Contact</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> <a href="mailto:yonwo55@gmail.com" class="hover:text-white transition-colors">yonwo55@gmail.com</a></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">link</span> <a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Navigation</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li><a href="../about_page_updated_header_theme/code.html" class="hover:text-white transition-colors">About</a></li>
+<li><a href="../projects_page_updated_header_theme/code.html" class="hover:text-white transition-colors">Projects</a></li>
+<li><a href="../publications_page_updated_header_theme/code.html" class="hover:text-white transition-colors">Publications</a></li>
+<li><a href="../Inwoo_Resume.pdf" download class="hover:text-white transition-colors">Resume</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center md:text-left text-xs text-slate-500">
+                    © 2026 Inwoo Lee Research Portfolio. All rights reserved. Built with analytical precision.
+                </div>
+</footer>
+</div>
+</div>
+<div id="share-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-[9999]">
+  Link copied!
+</div>
+<script>
+async function handleShare() {
+  const url = window.location.href;
+  if (navigator.share) {
+    try { await navigator.share({ title: 'Inwoo Lee – Research Portfolio', url }); } catch(e) {}
+  } else {
+    await navigator.clipboard.writeText(url);
+    const toast = document.getElementById('share-toast');
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  }
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.contact-dropdown')) {
+    document.querySelectorAll('.contact-menu').forEach(m => m.classList.add('hidden'));
+  }
+});
+</script>
+</body></html>

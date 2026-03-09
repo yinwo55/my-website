@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2589d4",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a",
+                        "navy-custom": "#1e293b",
+                        "slate-custom": "#475569",
+                        "lavender-muted": "#1e293b"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "8px", "lg": "12px", "xl": "16px", "full": "9999px"},
+                },
+            },
+        }</script>
+<title>Publications &amp; Policy Reports | Inwoo Lee</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid px-6 py-4 lg:px-40 bg-white border-slate-200 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-navy-custom dark:text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-navy-custom text-lg font-bold leading-tight tracking-[-0.015em]">Inwoo Lee</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../homepage_updated_header_theme/code.html">Home</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../about_page_updated_header_theme/code.html">About</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../projects_page_updated_header_theme/code.html">Projects</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Publications</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../Inwoo_Resume.pdf" download>Resume</a>
+<div class="relative contact-dropdown">
+<button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-slate-600 text-sm font-medium hover:text-primary transition-colors">Contact</button>
+<div class="contact-menu hidden absolute right-0 top-8 bg-white rounded-xl shadow-lg border border-slate-100 p-4 flex flex-col gap-3 min-w-[200px] z-50">
+<a href="mailto:yonwo55@gmail.com" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span>Email</span>
+</a>
+<a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>LinkedIn</span>
+</a>
+</div>
+</div>
+</nav>
+<button onclick="handleShare()" class="flex items-center justify-center rounded-lg h-10 bg-primary/10 text-primary px-4 gap-2 text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="hidden sm:inline">Share</span>
+</button>
+</div>
+</header>
+<main class="px-6 py-10 lg:px-40 flex-1">
+<div class="max-w-[1100px] mx-auto">
+<!-- Hero Section -->
+<div class="flex flex-col gap-4 mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+                            Scholarly Portfolio
+                        </div>
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight text-slate-900">
+                            Publications &amp; <span class="text-primary">Policy Reports</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                            Decision-relevant research spanning peer-reviewed publications, government-commissioned policy reports, and working papers, covering China's AI strategy, frontier technology competition, information operations, and the geopolitical dynamics of U.S.–China strategic rivalry.
+                        </p>
+</div>
+<!-- Category Tabs -->
+<div class="mb-8 overflow-x-auto">
+<div class="flex border-b border-primary/10 gap-8 min-w-max">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-3 text-slate-900 dark:text-slate-100" href="#">
+<span class="text-sm font-bold">All Contributions</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#peer-reviewed">
+<span class="text-sm font-bold">Academic Publications</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#policy-reports">
+<span class="text-sm font-bold">Policy Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#working-papers">
+<span class="text-sm font-bold">Working Papers</span>
+</a>
+</div>
+</div>
+<!-- List Section: Academic Publications -->
+<section id="peer-reviewed" class="mb-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight">Peer-Reviewed Publications</h2>
+<div class="h-px flex-1 bg-primary/10 mx-6 hidden md:block"></div>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                                Filter by Year <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Publication Item 1 -->
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Journal Article</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-500 uppercase">2021</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900">
+Lee, I., &amp; Lee, H. (2021). <span class="italic text-primary">China's Data Securitization and Changes in U.S.-China Strategic Competition.</span> Korea &amp; World Politics, 37(2), 217–251.
+</p>
+<div class="flex flex-wrap items-center gap-4 text-sm font-medium">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">format_quote</span>
+<span>5 citations</span>
+</div>
+<div class="flex items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Cited by INSS (Institute for National Security Strategy, affiliated with Korea's National Intelligence Service)</span>
+</div>
+</div>
+<div class="mt-4 flex flex-wrap gap-3">
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">U.S.-China Strategic Competition</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">Data Sovereignty</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">Data Governance</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">General Purpose Technology (GPT)</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">Artificial Intelligence (AI)</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">Digital Transformation</span>
+<span class="text-xs bg-slate-50 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">Data as Strategic Resource</span>
+</div>
+<div class="mt-3">
+<button onclick="toggleAbstract('abstract-pub1', this)" class="flex items-center gap-1 text-xs font-bold text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">expand_more</span> Abstract
+</button>
+<div id="abstract-pub1" class="hidden mt-3 text-sm text-slate-600 leading-relaxed space-y-3 border-l-2 border-primary/30 pl-4">
+<p>This study examines how the digital transformation driven by general-purpose technologies (GPTs) is reshaping the nature of strategic competition between the United States and China. As digital technologies increasingly function as dual-use technologies in both civilian and military domains, data has emerged as a critical strategic resource and a key input for artificial intelligence. The ability to collect, control, and utilize large-scale data therefore plays an increasingly central role in national power and geopolitical competition.</p>
+<p>The paper argues that the evolving U.S.–China rivalry is fundamentally shaped by competition over data resources and data governance. In the digital era, AI capabilities depend heavily on both the scale and diversity of available data. China has developed a comparative advantage in data concentration through rapid digital transformation and a large domestic user base, while the United States maintains strengths in data diversity through globally dominant digital platforms and cross-border data flows.</p>
+<p>These differences are closely linked to contrasting data governance models. China's state-centered system enables more direct mobilization of data as a strategic resource, whereas the United States relies on market-based mechanisms and faces institutional constraints related to privacy and democratic governance. As a result, competition over data has become a central dimension of U.S.–China technological and geopolitical rivalry.</p>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-2 shrink-0 justify-end md:justify-start">
+<a href="../publication/peer-reviewed/KCI_FI002729460.pdf" download class="flex items-center justify-center gap-2 rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+PDF
+</a>
+<a href="https://doi.org/10.17331/kwp.2021.37.2.006" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-lg h-10 px-6 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-sm">link</span>
+DOI
+</a>
+</div>
+</div>
+</section>
+<!-- List Section: Policy Reports -->
+<section id="policy-reports" class="mb-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Policy Reports</h2>
+<div class="h-px flex-1 bg-primary/10 mx-6 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Policy Card: Chinese Buzzwords Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2022</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">Popular Buzzwords and the Hidden Dynamics of Chinese Society: The Era of Competition and the State</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report analyzes China's most widely used internet buzzwords to reveal underlying social dynamics among younger generations. It argues that contemporary Chinese society is increasingly characterized by intense social competition and the strengthening of state-centered nationalism.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-china-buzzwords').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: Korean Youth Anti-China Sentiment -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2022</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">The Era of Hostility and the Clash of Values: How Korean Youth Perceive China</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report examines the rise of anti-China sentiment among Korean youth and analyzes the political, social, and cultural factors driving these attitudes. It argues that beyond specific disputes, deeper value differences between democratic and authoritarian systems shape perceptions of China.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-korea-china-youth').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: LLM Discourse Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2025</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">AI Competition as Discourse Competition: The Vulnerabilities and Strategic Risks of Large Language Models</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report examines how large language models (LLMs) are reshaping information competition and political discourse. It highlights how differences in data governance, language environments, and model training can produce politically biased outputs that may influence public opinion and information security.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-llm-discourse').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: AI Semiconductors Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2023</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">The Race for Advanced Technology: AI Semiconductors and the Intensifying U.S.–China Tech Rivalry</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report analyzes the strategic importance of AI semiconductors in the U.S.–China technological rivalry and examines how export controls, supply chain restructuring, and alliance politics are reshaping the global semiconductor industry.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-ai-semiconductors').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: Taiwan Strait Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2022</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">The Taiwan Strait at a Crossroads: Calculating the Costs of a Chinese Invasion of Taiwan</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report evaluates the military and economic costs China would face in a potential invasion of Taiwan and assesses the strategic dynamics driving tensions in the Taiwan Strait. It argues that despite the enormous costs, the risk of conflict cannot be ruled out given the geopolitical stakes involved.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-taiwan-strait').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: Guochao Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2022</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">The Rise of Patriotic Consumption in China: The Emergence of the "New Guochao (国潮)" Trend</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report analyzes the rapid rise of patriotic consumption in China and the emergence of the "New Guochao" trend, where domestic brands integrate traditional culture and nationalism into consumer products. It highlights how social media platforms are transforming patriotic sentiment into a powerful market force.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-guochao').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Policy Card: Hong Kong Report -->
+<div class="flex flex-col bg-slate-50 border-l-4 border-primary p-6 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">2022</span>
+<span class="material-symbols-outlined text-slate-300">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 leading-tight text-slate-900">Hong Kong's Political Landscape and the Future of Its Financial Markets</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+This report assesses recent political and economic developments in Hong Kong and evaluates their implications for financial markets and investment risk. Despite growing geopolitical tensions and policy uncertainties, Hong Kong's capital markets remain resilient as a key gateway for investment into China.
+</p>
+<div class="mt-auto pt-4 border-t border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>Full version not available</span>
+</div>
+<button onclick="document.getElementById('modal-hongkong-market').classList.remove('hidden')" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+View Summary <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Working Papers Section -->
+<section id="working-papers" class="mb-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900">Working Papers</h2>
+<div class="h-px flex-1 bg-primary/10 mx-6 hidden md:block"></div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Working Paper</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900">
+<span class="italic text-slate-800">How Misleading Information Changes Individuals' Perceptions: Fake News and Identity Effects in Taiwan</span>
+</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">
+This working paper investigates how misinformation narratives influence political perceptions in Taiwan. Using a dataset of fact-checked misinformation and computational text analysis methods (LDA/NMF topic modeling), the study identifies dominant misinformation themes and develops a theoretical framework explaining how partisan and national identities shape responses to misleading information.
+</p>
+<div class="space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Methods</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Computational Text Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Topic Modeling (LDA/NMF)</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Misinformation Corpus Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Topic Saliency Measurement (HHI)</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Panel Data Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Identity-based Political Analysis</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Research Areas</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Mis/Disinformation</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Identity Politics</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Topic Modeling</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Computational Text Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Democratic Resilience</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Information Operations</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Information Environment</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Inter-strait Relations</span>
+</div>
+</div>
+</div>
+<div class="mt-3">
+<button onclick="toggleAbstract('abstract-wp1', this)" class="flex items-center gap-1 text-xs font-bold text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">expand_more</span> Abstract
+</button>
+<div id="abstract-wp1" class="hidden mt-3 text-sm text-slate-600 leading-relaxed space-y-3 border-l-2 border-slate-300 pl-4">
+<p>This study examines how misleading information may influence political perceptions through the interaction of multiple social identities. While existing research on misinformation primarily focuses on partisan motivated reasoning, individuals often hold overlapping identities that shape how they interpret political information. To address this gap, the paper develops a research design to test a framework of mixed-identity motivated reasoning, focusing on how partisanship and national identity interact when individuals process fake news.</p>
+<p>Taiwan provides an ideal case for studying these dynamics because political competition is shaped by both partisan divisions and national identity related to cross-strait relations with China. The paper argues that the political effects of fake news vary depending on which identity becomes salient. When partisan identity is activated, misinformation may intensify political polarization. When national identity becomes dominant (particularly in the context of perceived foreign interference) misinformation may instead generate a backlash or "rally around the flag" response.</p>
+<p>To investigate these mechanisms, the study combines computational text analysis with quantitative modeling. The analysis uses fact-checked misinformation collected from the Taiwan FactCheck Center and applies topic modeling to identify which identities are activated by different misinformation narratives. Issue saliency is measured using the Herfindahl–Hirschman Index, and the empirical analysis is designed to employ panel data and fixed-effects models to examine how exposure to identity-triggering misinformation may shape individuals' political perceptions.</p>
+<p>By integrating computational text analysis with theories of motivated reasoning, this project contributes to research on misinformation, political behavior, and the broader role of information manipulation in contemporary information and cognitive warfare environments.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Revealing the Iceberg -->
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Working Paper</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900">
+<span class="italic text-slate-800">Revealing the Iceberg: Reassessing the Goals, Strategies, and Targets of China's Information Operations</span>
+</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">
+This working paper analyzes the strategic logic behind China's information operations. Drawing on social media datasets of state-linked accounts and computational topic analysis, the study investigates how Chinese information campaigns targeting the United States adapt their messaging across geopolitical contexts. The results show that Chinese operators increasingly embed narratives within polarized U.S. domestic issues while strategically amplifying pro-China narratives, suggesting that information operations function as instruments of geopolitical competition rather than merely tools for propaganda.
+</p>
+<div class="space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Methods</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Computational Text Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">BERTopic Topic Modeling</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Hashtag-based Discourse Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Information Operations Dataset Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Poisson Regression</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Negative Binomial Regression</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Logistic Regression</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Political Event Context Analysis</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Research Areas</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Information Operations</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Foreign Influence Operations (FIO)</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">China's Strategic Communication</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Cognitive Warfare</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Information Competition</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Geopolitical Influence Campaigns</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">U.S.–China Strategic Rivalry</span>
+</div>
+</div>
+</div>
+<div class="mt-3">
+<button onclick="toggleAbstract('abstract-wp2', this)" class="flex items-center gap-1 text-xs font-bold text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">expand_more</span> Abstract
+</button>
+<div id="abstract-wp2" class="hidden mt-3 text-sm text-slate-600 leading-relaxed space-y-3 border-l-2 border-slate-300 pl-4">
+<p>This study reassesses the strategic logic of China's information operations (IO) by examining how Chinese state-backed campaigns target and exploit political dynamics in rival countries. While existing research has largely focused on China's efforts to promote pro-China narratives or defend regime legitimacy, this study argues that Chinese IO increasingly adopts a more opportunistic strategy that leverages political tensions within target societies to advance geopolitical objectives.</p>
+<p>Focusing on Chinese information operations targeting the United States between 2017 and 2018, the study analyzes state-linked accounts on X (Twitter) to investigate how messaging strategies evolve across different geopolitical contexts. The analysis shows that Chinese IO does not rely solely on direct propaganda; instead, it frequently embeds messages within highly polarized domestic issues in the United States, such as gun violence, race relations, and partisan conflict. These narratives are used to amplify social divisions while simultaneously promoting pro-China messages through coordinated inauthentic amplification.</p>
+<p>Using computational text analysis and statistical modeling, including BERTopic topic modeling and regression analysis, the study identifies how messaging strategies vary across different phases of geopolitical conflict. The findings suggest that Chinese IO campaigns adapt their messaging in response to changing geopolitical circumstances, indicating that information operations function as a flexible instrument of strategic statecraft rather than merely reactive propaganda.</p>
+<p>By integrating insights from international security studies and computational social science, this research contributes to a broader understanding of how authoritarian states weaponize information within contemporary information and cognitive warfare environments.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Words as Weapons -->
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Working Paper</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900">
+<span class="italic text-slate-800">Words as Weapons: Nationalistic Discourse and Strategic Behavior in China's Foreign Policy</span>
+</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">
+This working paper analyzes how nationalist rhetoric influences China's foreign policy behavior. Using computational text analysis of People's Daily articles combined with international event data, the study identifies different rhetorical frames — anti-foreign nationalism, national pride, and national revival — and evaluates their relationship with patterns of interstate cooperation and conflict. The results indicate that anti-foreign rhetoric is strongly associated with increased material conflict behavior, highlighting how political discourse can shape strategic state actions.
+</p>
+<div class="space-y-3">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Methods</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Computational Text Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">LLaMA Semantic Classification</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Word2Vec Embeddings</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Panel Data Analysis</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Zero-inflated Models</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">Event Data Analysis</span>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Research Areas</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">China Foreign Policy</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Nationalist Rhetoric</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Core Interests</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Strategic Signaling</span>
+<span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Geopolitical Discourse</span>
+</div>
+</div>
+</div>
+<div class="mt-3">
+<button onclick="toggleAbstract('abstract-wp3', this)" class="flex items-center gap-1 text-xs font-bold text-primary hover:underline">
+<span class="material-symbols-outlined text-sm">expand_more</span> Abstract
+</button>
+<div id="abstract-wp3" class="hidden mt-3 text-sm text-slate-600 leading-relaxed space-y-3 border-l-2 border-slate-300 pl-4">
+<p>This study examines how nationalist rhetoric shapes China's foreign policy behavior in the Xi Jinping era. In recent years, Chinese diplomatic discourse has become increasingly assertive, often invoking narratives of national rejuvenation, sovereignty, and "core interests." While such rhetoric is frequently interpreted as symbolic or propagandistic, this paper argues that different forms of nationalist discourse may systematically influence patterns of interstate interaction.</p>
+<p>Building on theories of ontological security and audience costs, the study develops a framework explaining how identity-based narratives and domestic expectations can constrain or enable foreign policy behavior. When nationalist rhetoric ties specific issues to China's core identity and historical narratives, it may increase pressure on leaders to adopt more assertive diplomatic or strategic actions.</p>
+<p>Empirically, the project combines computational text analysis with quantitative modeling. Using textual data from People's Daily, the study classifies nationalist rhetoric into several categories — including anti-foreign rhetoric, national pride, and national revival — using Word2Vec-based semantic expansion and large language model-assisted validation. These rhetorical signals are then linked to international event data on China's diplomatic interactions using panel models and zero-inflated negative binomial regression.</p>
+<p>The findings suggest that different types of nationalist rhetoric are associated with distinct patterns of conflict and cooperation in China's foreign policy, highlighting the strategic role of discourse in contemporary international politics.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<!-- Modal: LLM Discourse Report -->
+<div id="modal-llm-discourse" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-llm-discourse').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">AI Competition as Discourse Competition: The Vulnerabilities and Strategic Risks of Large Language Models</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report analyzes how the rapid diffusion of large language models (LLMs) is transforming the global information environment and creating new arenas of strategic competition. Conversational AI systems such as ChatGPT, Gemini, Bing AI, and DeepSeek are increasingly used as tools for information retrieval and content generation, reaching hundreds of millions of users worldwide. As these systems become embedded in everyday information consumption, they increasingly shape how political narratives and public discourse are produced and disseminated.</p>
+<p>A central argument of the report is that the political bias of LLM outputs is not solely a technological issue but is deeply connected to the information ecosystems and data governance systems in which these models are trained. For example, models developed in highly regulated information environments may incorporate state-driven information constraints into their responses. The report highlights the case of China's DeepSeek model, which demonstrates response restrictions or evasive answers on politically sensitive topics due to the structure of China's information governance system.</p>
+<p>The report also presents empirical comparisons between ChatGPT and DeepSeek by asking hundreds of political and scientific questions in Korean, English, and Chinese. The findings show that while the two models produce highly consistent answers in scientific questions, their responses diverge significantly on political topics. According to the analysis presented in the response consistency chart on page 6, scientific questions show over 90% agreement across models, whereas political questions show agreement rates of roughly 60%, reflecting the influence of political context and training data.</p>
+<p>Language also plays a significant role in shaping model responses. As illustrated in the language consistency comparison chart on page 8, responses to political questions vary substantially depending on the language used in prompts. In particular, certain geopolitical issues — such as the THAAD deployment controversy between South Korea and China — produce markedly different answers depending on whether the question is asked in Korean, English, or Chinese. These variations suggest that language environments and geopolitical narratives embedded in training data can influence how LLMs interpret politically sensitive issues.</p>
+<p>The report concludes that LLMs should be understood not merely as information tools but as active producers of discourse capable of influencing political narratives and public opinion. In an era of geopolitical rivalry and information warfare, the spread of AI-generated content raises concerns about foreign influence operations, cognitive warfare, and the manipulation of national information environments. As a result, governments and institutions must develop strategies to monitor AI-generated discourse, strengthen data governance, and safeguard information sovereignty in the emerging AI-driven information ecosystem.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: AI Semiconductors Report -->
+<div id="modal-ai-semiconductors" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-ai-semiconductors').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">The Race for Advanced Technology: AI Semiconductors and the Intensifying U.S.–China Tech Rivalry</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report examines the intensifying technological competition between the United States and China with a particular focus on the strategic role of AI semiconductors. As advanced technologies increasingly shape geopolitical power, semiconductors have emerged as a critical component in determining leadership in the Fourth Industrial Revolution. According to the report, countries that dominate key technological sectors (such as artificial intelligence, quantum computing, and semiconductor manufacturing) are likely to shape the future global order.</p>
+<p>The report analyzes recent U.S. policies aimed at constraining China's semiconductor development. Washington has implemented export controls targeting advanced computing and semiconductor manufacturing technologies while also pursuing industrial policies designed to strengthen domestic semiconductor production. These measures include restrictions on advanced chip exports and broader efforts to restructure global semiconductor supply chains around allied economies. The report notes that these policies aim to slow China's development of an independent advanced semiconductor ecosystem.</p>
+<p>At the same time, China has been actively developing strategies to mitigate the effects of these restrictions. The report highlights China's efforts to expand domestic semiconductor capabilities through technological alternatives such as chiplet architectures and next-generation semiconductor materials. China is also attempting to circumvent export controls by relying on cloud computing services and alternative hardware solutions to sustain its AI development ecosystem.</p>
+<p>Finally, the report evaluates the strategic implications for South Korea, one of the world's leading semiconductor producers. While Korea possesses strong capabilities in memory semiconductor manufacturing and a highly developed industrial ecosystem, it also faces structural vulnerabilities in areas such as fabless design, semiconductor equipment, and specialized materials. The report concludes that Korea must carefully navigate the emerging technology blocs created by the U.S.–China rivalry and leverage initiatives such as the proposed "Chip 4" alliance to secure stable semiconductor supply chains while maintaining its technological competitiveness.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: Taiwan Strait Report -->
+<div id="modal-taiwan-strait" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-taiwan-strait').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">The Taiwan Strait at a Crossroads: Calculating the Costs of a Chinese Invasion of Taiwan</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report analyzes the growing tensions in the Taiwan Strait and evaluates the potential military and economic consequences of a Chinese invasion of Taiwan. The study situates the current crisis within the broader context of intensifying U.S.–China strategic competition, highlighting how Taiwan has emerged as one of the most dangerous geopolitical flashpoints in the Indo-Pacific region.</p>
+<p>The report examines the strategic motivations of the key actors involved. For the United States, Taiwan represents an important strategic partner within its Indo-Pacific security framework and a critical node in global semiconductor supply chains. For China, however, Taiwan is not only strategically important but also tied to historical narratives of national reunification and regime legitimacy. As a result, Beijing increasingly frames unification with Taiwan as a historical mission tied to national rejuvenation.</p>
+<p>The analysis then evaluates the potential military costs of an invasion scenario. Although China has significantly expanded its anti-access and area-denial (A2/AD) capabilities, a successful invasion would still face substantial operational challenges, including the need for large-scale amphibious operations, potential U.S. military intervention, and the logistical complexity of sustaining combat across the Taiwan Strait. Simulation studies suggest that in a prolonged conflict both sides would suffer heavy losses, but China could face even greater military costs.</p>
+<p>In addition to military risks, the report highlights the severe economic consequences of a conflict. Because China's economy is highly dependent on international trade, disruptions to maritime trade routes and global supply chains would impose significant economic costs. Estimates suggest that in a major conflict scenario China's GDP could decline by 25–35%, compared to an estimated 5–10% decline for the United States.</p>
+<p>Finally, the report considers the broader regional implications, particularly for the Korean Peninsula. The involvement of U.S. forces stationed in South Korea and Japan could potentially draw regional actors into the conflict, while disruptions to trade routes and energy supply chains would have serious economic consequences for Northeast Asia. The report concludes that although the costs of war are extremely high, the possibility of conflict cannot be entirely dismissed as long as strategic competition between the United States and China continues to intensify.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: Guochao Report -->
+<div id="modal-guochao" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-guochao').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">The Rise of Patriotic Consumption in China: The Emergence of the "New Guochao (国潮)" Trend</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report examines the evolution of patriotic consumption in China and analyzes the emergence of the "New Guochao" (New National Trend) phenomenon, in which domestic brands combine traditional Chinese culture, nationalism, and modern marketing strategies to shape consumer behavior. The report argues that patriotic consumption in China has evolved beyond simple preference for domestic products and now reflects a broader cultural and identity-driven consumption trend.</p>
+<p>The analysis shows that younger consumers — particularly urban, educated, and higher-income groups — play a central role in driving this trend. Surveys indicate that Chinese consumers increasingly purchase domestic brands not only because of price competitiveness or product quality but also as a way of expressing national pride and supporting domestic companies. In particular, a large share of consumers report that purchasing domestic products is connected to feelings of patriotism and national identity.</p>
+<p>New media platforms such as short-video applications and livestream commerce have significantly accelerated the spread of Guochao culture. Online platforms amplify nationalist narratives, cultural content, and brand storytelling, allowing companies to cultivate patriotic brand images that translate directly into consumer demand. Viral events and social media campaigns frequently generate large spikes in sales when brands successfully align themselves with national sentiment.</p>
+<p>The report concludes that the New Guochao trend represents a structural transformation in China's consumer culture, where economic rationality and emotional nationalism increasingly interact. While the trend creates new opportunities for domestic brands, its sustainability will depend on whether companies can move beyond emotional marketing and build lasting brand value through quality, innovation, and digital transformation.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: Hong Kong Market Report -->
+<div id="modal-hongkong-market" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-hongkong-market').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">Hong Kong's Political Landscape and the Future of Its Financial Markets</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report examines the evolving political and economic landscape in Hong Kong and evaluates its implications for regional markets and international investors. Recent developments — including the removal of Hong Kong's special trade status by the United States, the election of a pro-Beijing chief executive, and the economic disruptions caused by strict COVID-19 policies — have raised concerns about the stability of Hong Kong's business environment and its role as a global financial hub.</p>
+<p>The report finds that while these factors have created short-term uncertainty, the structural foundations of Hong Kong's financial system remain robust. The city continues to provide a highly competitive financial infrastructure characterized by free capital flows, strong international connectivity, and a favorable tax regime. Moreover, Hong Kong's position as the primary gateway for foreign investment into mainland China remains difficult to replicate, even as alternative financial centers such as Singapore attempt to expand their role.</p>
+<p>At the same time, the report highlights emerging risks in Hong Kong's domestic economy, particularly in the consumer sector. Strict pandemic control measures and global economic uncertainty have contributed to declining private consumption and negative economic growth in early 2022. Rising interest rates, unemployment pressures, and external economic shocks may further constrain household spending in the short term.</p>
+<p>Overall, the report concludes that although Hong Kong faces significant political and economic challenges, its financial markets continue to demonstrate resilience. As long as international capital flows into China remain strong, Hong Kong is likely to maintain its strategic role as Asia's leading financial gateway.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: Korean Youth Anti-China Sentiment -->
+<div id="modal-korea-china-youth" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-korea-china-youth').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">The Era of Hostility and the Clash of Values: How Korean Youth Perceive China</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report analyzes the growing anti-China sentiment among younger generations in South Korea and explores the structural causes behind this trend. Using online discourse, social media content, and public debates as evidence, the report shows that hostility toward China has become particularly pronounced among Korean youth and increasingly influences political attitudes and public discourse.</p>
+<p>The analysis identifies several immediate triggers of anti-China sentiment, including political disputes such as the THAAD controversy, environmental issues like transboundary air pollution, and cultural conflicts surrounding allegations of intellectual property theft and disputes over the origins of cultural traditions such as kimchi and hanbok. These issues have been amplified through online platforms where algorithm-driven content and viral commentary reinforce negative perceptions of China.</p>
+<p>More fundamentally, however, the report argues that the roots of this sentiment lie in a deeper clash of values. Korean youth tend to interpret China through the lens of authoritarian governance, perceived restrictions on political freedom, and concerns over fairness in cultural and economic competition. Incidents such as clashes between Chinese students and Korean students during the Hong Kong protests further reinforced the perception that Chinese political values conflict with the democratic norms embraced by Korean society.</p>
+<p>The report concludes that anti-China sentiment in South Korea is not merely a temporary reaction to specific events but reflects a broader value gap between the two societies. While such perceptions may be difficult to change in the short term, policymakers must manage the spread of indiscriminate hostility to prevent it from undermining social cohesion and distorting foreign policy debates.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal: Chinese Buzzwords Report -->
+<div id="modal-china-buzzwords" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-6">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Summary</span>
+<button onclick="document.getElementById('modal-china-buzzwords').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">Popular Buzzwords and the Hidden Dynamics of Chinese Society: The Era of Competition and the State</h2>
+<div class="space-y-5 text-slate-700 text-sm leading-relaxed">
+<p>This report examines the social meaning behind popular internet buzzwords circulating in China, using them as an analytical lens to understand emerging social attitudes and political narratives. Drawing on widely used expressions from online platforms and media discourse, the report categorizes these buzzwords into three major themes: competitive social pressures, rising state-centered nationalism, and new forms of emotional expression among young people.</p>
+<p>The analysis shows that many expressions (such as <span class="italic">involution</span> (内卷) and <span class="italic">lying flat</span> (躺平)) reflect growing frustration among Chinese youth facing intense educational, economic, and social competition. At the same time, nationalist expressions associated with state narratives (such as "The Awakening Age" (觉醒年代), "The nation is strong because of us" (强国有我), and references to the Korean War under the slogan "Resist America, Aid North Korea" (抗美援朝)) demonstrate how patriotic discourse is increasingly mobilized within society.</p>
+<p>Taken together, the report argues that contemporary Chinese public discourse reflects a dual dynamic: while younger generations experience growing socioeconomic pressures and inequality, these frustrations are often reframed within narratives of national strength and patriotic solidarity. As a result, China's social discourse increasingly reveals what may be described as an emerging "era of competition and the state," where intense domestic competition coexists with heightened nationalist mobilization.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="text-white py-12 px-6 md:px-20 border-t border-slate-800 bg-[#0f172a]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="text-xl font-bold">Inwoo Lee</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+Research, policy analysis, and strategic advisory work at the intersection of technology and global security.
+</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Contact</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> <a href="mailto:yonwo55@gmail.com" class="hover:text-white transition-colors">yonwo55@gmail.com</a></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">link</span> <a href="https://www.linkedin.com/in/lee-in-woo-0b4584129/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Navigation</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li><a href="../about_page_updated_header_theme/code.html" class="hover:text-white transition-colors">About</a></li>
+<li><a href="../projects_page_updated_header_theme/code.html" class="hover:text-white transition-colors">Projects</a></li>
+<li><a href="../publications_page_updated_header_theme/code.html" class="hover:text-white transition-colors">Publications</a></li>
+<li><a href="../Inwoo_Resume.pdf" download class="hover:text-white transition-colors">Resume</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center md:text-left text-xs text-slate-500">
+© 2026 Inwoo Lee Research Portfolio. All rights reserved. Built with analytical precision.
+</div>
+</footer>
+</div>
+</div>
+<div id="share-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none z-[9999]">
+  Link copied!
+</div>
+<script>
+async function handleShare() {
+  const url = window.location.href;
+  if (navigator.share) {
+    try { await navigator.share({ title: 'Inwoo Lee – Research Portfolio', url }); } catch(e) {}
+  } else {
+    await navigator.clipboard.writeText(url);
+    const toast = document.getElementById('share-toast');
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+  }
+}
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.contact-dropdown')) {
+    document.querySelectorAll('.contact-menu').forEach(m => m.classList.add('hidden'));
+  }
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('[id^="modal-"]').forEach(m => m.classList.add('hidden'));
+  }
+});
+function toggleAbstract(id, btn) {
+  const el = document.getElementById(id);
+  const isHidden = el.classList.toggle('hidden');
+  const icon = btn.querySelector('.material-symbols-outlined');
+  icon.textContent = isHidden ? 'expand_more' : 'expand_less';
+}
+</script>
+</body></html>
