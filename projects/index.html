@@ -84,7 +84,7 @@
             </p>
 </div>
 <!-- Filter Controls -->
-<div class="flex flex-wrap items-center gap-3 mb-8">
+<div id="filter-controls" class="flex flex-wrap items-center gap-3 mb-8">
 <button class="filter-btn flex items-center gap-2 px-4 py-2 bg-primary text-sm font-bold rounded-lg shadow-sm text-white" data-filter="all">
 <span>All Disciplines</span>
 </button>
@@ -2457,5 +2457,29 @@ document.addEventListener('keydown', function(e) {
     document.querySelectorAll('[id^="modal-"]').forEach(m => m.classList.add('hidden'));
   }
 });
+</script>
+
+<!-- Back to Menu Button -->
+<button id="back-to-tabs" onclick="document.getElementById('filter-controls').scrollIntoView({behavior:'smooth'})" class="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-primary text-white text-sm font-bold px-4 py-2.5 rounded-full shadow-lg hover:brightness-110 transition-all opacity-0 pointer-events-none">
+  <span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+  Back to Menu
+</button>
+
+<script>
+// Back to menu button visibility
+(function() {
+  var btn = document.getElementById('back-to-tabs');
+  var tabs = document.getElementById('filter-controls');
+  window.addEventListener('scroll', function() {
+    var tabsBottom = tabs.getBoundingClientRect().bottom;
+    if (tabsBottom < 0) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    } else {
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
+    }
+  }, { passive: true });
+})();
 </script>
 </body></html>
