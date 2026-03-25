@@ -48,9 +48,9 @@
 </div>
 <div class="flex flex-1 justify-end gap-8">
 <nav class="hidden md:flex items-center gap-9">
-<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../homepage_updated_header_theme/index.html">Home</a>
-<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../about_page_updated_header_theme/index.html">About</a>
-<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../projects_page_updated_header_theme/index.html">Projects</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/">Home</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/about">About</a>
+<a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="/projects">Projects</a>
 <a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Publications</a>
 <a class="text-slate-600 text-sm font-medium hover:text-primary transition-colors" href="../Inwoo_Resume.pdf" download>Resume</a>
 <div class="relative contact-dropdown">
@@ -89,19 +89,22 @@
                         </p>
 </div>
 <!-- Category Tabs -->
-<div class="mb-8 overflow-x-auto">
-<div class="flex border-b border-primary/10 gap-8 min-w-max">
-<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-3 text-slate-900 dark:text-slate-100" href="#">
+<div id="section-tabs" class="sticky top-[65px] z-40 bg-white border-b border-slate-200 shadow-sm -mx-6 lg:-mx-40 px-6 lg:px-40 mb-8 overflow-x-auto">
+<div class="flex gap-8 min-w-max">
+<a id="tab-all" class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-3 pt-3 text-slate-900 transition-colors" href="#">
 <span class="text-sm font-bold">All Contributions</span>
 </a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#peer-reviewed">
+<a id="tab-peer-reviewed" class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 pt-3 text-slate-500 hover:text-primary transition-colors" href="#peer-reviewed">
 <span class="text-sm font-bold">Academic Publications</span>
 </a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#policy-reports">
+<a id="tab-policy-reports" class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 pt-3 text-slate-500 hover:text-primary transition-colors" href="#policy-reports">
 <span class="text-sm font-bold">Policy Reports</span>
 </a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 text-slate-500 hover:text-primary transition-colors" href="#working-papers">
+<a id="tab-working-papers" class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 pt-3 text-slate-500 hover:text-primary transition-colors" href="#working-papers">
 <span class="text-sm font-bold">Working Papers</span>
+</a>
+<a id="tab-editorial-roles" class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-3 pt-3 text-slate-500 hover:text-primary transition-colors" href="#editorial-roles">
+<span class="text-sm font-bold">Editorial Roles</span>
 </a>
 </div>
 </div>
@@ -164,10 +167,10 @@ PDF
 <span class="material-symbols-outlined text-sm">link</span>
 DOI
 </a>
-<button onclick="document.getElementById('modal-english-paper').classList.remove('hidden')" class="flex items-center justify-center gap-2 rounded-lg h-10 px-6 bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all">
+<a href="english-data-strategic-resource.html" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-lg h-10 px-6 bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all">
 <span class="material-symbols-outlined text-sm">translate</span>
 English
-</button>
+</a>
 </div>
 </div>
 </section>
@@ -480,101 +483,50 @@ This working paper analyzes how nationalist rhetoric influences China's foreign 
 </div>
 </section>
 
+<!-- Editorial Roles Section -->
+<section id="editorial-roles" class="mb-16">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Editorial Roles</h2>
+<div class="h-px flex-1 bg-primary/10 mx-6 hidden md:block"></div>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Editorial Item 1: Sungkyun China Brief -->
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Editor</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 uppercase">Korean</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 uppercase">2019 – 2023</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900 italic">Sungkyun China Brief</p>
+<p class="text-sm text-slate-600 mb-3">Policy journal affiliated with the Sungkyun Institute for China Studies (SICS), Sungkyunkwan University. Published in Korean, the journal features interviews with Korean and Chinese government officials and scholarly analysis of current China affairs.</p>
+<ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+<li>Manuscript review, editing, and publication coordination</li>
+<li>Contributed to selecting and preparing content covering China foreign policy, Korea-China relations, and regional security dynamics</li>
+</ul>
+</div>
+</div>
+<!-- Editorial Item 2: Sungkyun China Insight -->
+<div class="group relative flex flex-col md:flex-row gap-6 bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-primary/30 transition-all shadow-sm">
+<div class="flex flex-1 flex-col">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase">Editor</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 uppercase">English</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-500 uppercase">2019 – 2023</span>
+</div>
+<p class="text-lg font-semibold leading-relaxed mb-2 text-slate-900 italic">Sungkyun China Insight</p>
+<p class="text-sm text-slate-600 mb-3">English-language companion journal to Sungkyun China Brief, published by SICS for international audiences. Features interviews with government officials and expert analysis on China's strategic, economic, and political developments.</p>
+<ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
+<li>Manuscript review, editing, and publication coordination</li>
+<li>Supported outward-facing dissemination of China policy analysis to English-speaking academic and policy audiences</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
 </div>
 </main>
-
-<!-- Modal: English Translation of Peer-Reviewed Paper -->
-<div id="modal-english-paper" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
-<div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-<div class="p-8">
-<div class="flex items-center justify-between mb-2">
-<span class="text-xs font-bold text-primary tracking-widest uppercase">English Translation · Full Paper</span>
-<button onclick="document.getElementById('modal-english-paper').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<h2 class="text-2xl font-bold text-slate-900 mb-1 leading-snug">Data as a Strategic Resource: China's Data Strategy and the Transformation of U.S.-China Rivalry</h2>
-<p class="text-sm text-slate-500 mb-1">Inwoo Lee &amp; Hee-ok Lee</p>
-<p class="text-xs text-slate-400 mb-6 italic">Originally published in Korean: <span class="not-italic">Korea &amp; World Politics</span>, 37(2), 217–251 (2021). DOI: 10.17331/kwp.2021.37.2.006</p>
-
-<div class="space-y-6 text-slate-700 text-sm leading-relaxed">
-
-<!-- Abstract -->
-<div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
-<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-3">Abstract</h3>
-<p class="mb-3">This study analyzes U.S.-China relations through the lens of data, which has emerged as a new strategic resource driven by digital transformation powered by general-purpose technologies (GPTs). Because digital technologies—as dual-use technologies—consume data as their primary input, securing data resources is essential for enhancing national power. Both the United States and China have rapidly entered the digital transformation era and are advancing digital transitions and data trade to strengthen their data competitiveness. As a result, China holds a comparative advantage in data <em>concentration</em> while the United States holds an advantage in data <em>diversity</em>; however, China is currently strengthening its connectivity with neighboring countries to partially compensate for its diversity deficit.</p>
-<p class="mb-3">Meanwhile, as nations pursue data competitiveness, the partial-excludability characteristics of data resources generate an external effect of sensitive information leakage. Managing this leakage while efficiently utilizing data makes data governance a cornerstone of national strategy. The democratic United States faces significant constraints on governmental data use—including complex procedures and human rights concerns—while authoritarian China enables the government to rapidly access all data generated domestically. In short, China can more readily mobilize competitive data as a national strategic resource.</p>
-<p>This paper argues that the core logic behind the United States' pursuit of value-based alliance diplomacy and decoupling from China lies in checking China's data strategy and maintaining U.S. hegemony.</p>
-<div class="mt-3 pt-3 border-t border-slate-200">
-<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Keywords: </span>
-<span class="text-xs text-slate-500">U.S.-China Strategic Competition · General Purpose Technology (GPT) · Data Strategy · Data Governance · Data Competitiveness</span>
-</div>
-</div>
-
-<!-- Section I -->
-<div>
-<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">I.</span> Introduction</h3>
-<p class="mb-3">Since the normalization of U.S.-China diplomatic relations in 1979, American policy toward China has fluctuated yet maintained a broadly accommodative approach as one of its pillars. However, with the rise of "America First" under the Trump administration, the United States intensified its competitive approach, and this strategic competition has deepened further under the Biden administration, with elements of systemic rivalry beginning to emerge. Within the spectrum of competition, cooperation, and confrontation in U.S.-China relations, strategic competition centering on technology and economics has grown increasingly intense, shaping conflicts in the ideological, institutional, and military domains.</p>
-<p class="mb-3">The reason this U.S.-China strategic competition revolves around technology is that the current wave of technological innovation involves general-purpose technologies (GPTs), which both countries recognize as game-changers for the international order. GPTs diffuse across virtually all sectors of society, generating creative destruction, and possess dual-use characteristics that bring structural changes to international politics and decisively affect the balance of hegemonic power.</p>
-<p class="mb-3">This paper focuses on the dynamics of international politics driven by GPTs and highlights the fact that intensifying U.S.-China strategic competition is unfolding around data resources. In the digital transformation era, securing data is a critical national strategy for all states, and nations seek to achieve both concentration and diversity in data competitiveness. However, during the process of data acquisition, data leakage occurs, generating both a positive externality (enhancing a rival state's competitiveness) and a negative externality (personal information leakage). Therefore, data governance—which aims to optimize the balance between data competitiveness and the minimization of these externalities—is at the heart of national strategy.</p>
-<p>In particular, China's data strategization operates within an authoritarian data governance framework, and the United States has used this as the basis for drawing a line between "techno-authoritarianism" and "techno-democracy." Since there are fundamentally no effective sanctions against data strategization, the U.S. response is limited to "blame games" and critiques of power dynamics—indirect and, in that sense, all the more strategically complex.</p>
-</div>
-
-<!-- Section II -->
-<div>
-<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">II.</span> General Purpose Technology (GPT) and Data as a Strategic Resource</h3>
-<p class="mb-3">While there is no clear consensus on the concept of the GPT driving the current technological revolution, there is broad agreement that society has entered a stage of "digital transformation." Digital transformation signifies a shift toward a data-driven value creation system in which IoT, cloud computing, big data, 5G, robotics, and AI interconnect to form a cyber-physical system (CPS)-based data circulation structure that merges the virtual and physical worlds.</p>
-<p class="mb-3">In the digital transformation era, data holds a different value than before. With GPT innovation, technologies emerged for collecting, storing, and processing massive volumes of data, giving rise to a data circulation structure in which AI develops on the basis of data. Data thus became a necessary and sufficient condition for operating the digital transformation society: it acquired the status of a resource.</p>
-<p class="mb-3">However, competition over data exhibits different dynamics than competition over natural resources like oil, due to data's two key characteristics. First, <strong>non-rivalry</strong>: data resources can be easily replicated and reused indefinitely, and thanks to AI's machine learning "self-learning" capability, data follows the law of increasing returns to scale. Second, <strong>partial excludability</strong>: data can be replicated and transmitted easily, allowing third parties to access data without payment. Because of this, the risk of data leakage is ever-present, generating both positive externalities (enhancing a rival state's national power) and negative externalities (personal information leakage).</p>
-<p class="mb-3">In this context, the type of data collected determines data competitiveness, measured by two key indicators:</p>
-<ul class="list-none space-y-1 mb-3 pl-4">
-<li class="flex gap-2"><span class="text-primary font-bold">•</span><span><strong>Data concentration (depth)</strong>: the capacity to uniformly accumulate all data generated domestically through digital transformation.</span></li>
-<li class="flex gap-2"><span class="text-primary font-bold">•</span><span><strong>Data diversity</strong>: the capacity to accumulate data generated by users from diverse groups—different ethnicities, cultures, and so on.</span></li>
-</ul>
-<p>These two factors are important because AI's machine learning technology is based on probability and statistics: the greater the number and variety of data samples, the higher the predictive accuracy AI achieves. States therefore seek an optimal strategy through data governance, balancing data competitiveness with minimization of externalities. Data governance thus takes the form of questions about who holds authority over data management, and manifests differently depending on how data sovereignty is interpreted.</p>
-</div>
-
-<!-- Section III -->
-<div>
-<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">III.</span> China's Data Strategization: Concentration and Diversity</h3>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">1. Concentration Advantage and Expansion of the Data Pool</p>
-<p class="mb-3">Beginning in 2012, the Chinese government began to prioritize big data industries for policy support. At the Fifth Plenary Session of the 18th Central Committee of the CCP in 2015, big data was officially recognized as a national-level foundational strategic resource. China came to regard data as the core of its national strategic resources and formulated a state-led innovation strategy to advance the convergence of digital technologies with society—most visibly through the Smart City construction initiative.</p>
-<p class="mb-3">China's digital transformation is proceeding at the fastest pace in the world. Its vast internet user base—approaching one billion people—generates enormous amounts of data: by 2016, China's e-commerce transaction volume accounted for 40% of the global total, mobile payment transactions were 11 times those of the United States, and domestic data generation surpassed the United States after 2016, with the gap projected to widen further.</p>
-<p class="mb-3">China also built a network of big data exchanges—starting with the world's first in Guiyang (2014)—enabling data trading across virtually all sectors. This accelerated data circulation and amplified China's data pool.</p>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 mt-4">2. Diversity Disadvantage and Strengthening of Connectivity</p>
-<p class="mb-3">The United States dominates in data <em>diversity</em> due to globally dominant digital platforms: Google, YouTube, and Facebook collect data on a global scale, ranking first through third globally in monthly site visitors. The world's largest data brokers are concentrated in the United States—Acxiom, for example, holds data on 700 million people worldwide. As of 2017, the United States sees 25 TB of cross-border data flowing per second versus just 5 TB for China.</p>
-<p class="mb-3">China, recognizing this diversity deficit, is strengthening connectivity with Belt and Road countries through a Digital Silk Road strategy—encompassing digital technology cooperation, data trading, cross-border e-commerce, 5G network construction, and smart city technology transfer. China has also adopted a Central Bank Digital Currency (CBDC), which, combined with the Cross-border Interbank Payment System (CIPS), challenges the U.S. SWIFT payment system.</p>
-<p>If Belt and Road countries—representing 44% of the global population—generate data that circulates centering on China, China could partially compensate for its diversity disadvantage. This consolidates a China-centered digital economy Regional Value Chain (RVC) and, through "choke point effects" and "Panopticon effects," could enable China to gain significant network power.</p>
-</div>
-
-<!-- Section IV -->
-<div>
-<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">IV.</span> Data Sovereignty and Governance Conflicts</h3>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">1. Data Sovereignty</p>
-<p class="mb-3">The United States has historically treated data as an <strong>economic asset</strong>. Data sovereignty resides primarily with private enterprises. Comprehensive federal-level privacy legislation does not exist; instead, sector-specific laws apply, and corporate data violations are handled through civil litigation rather than government-imposed fines. As data began to be treated as a strategic resource, state-level comprehensive privacy laws emerged—California's Consumer Privacy Act of 2018 being the most prominent—but government intervention remains minimized and the norm of market self-regulation is maintained.</p>
-<p class="mb-3">The FBI's request that Apple unlock a terrorist's iPhone—which Apple refused on privacy grounds—illustrates this tension: even national security purposes do not automatically override individual data rights, and divergent court rulings across states reflect the absence of a clear national standard.</p>
-<p class="mb-3">China's approach is fundamentally different. Its data protection policy focuses on protecting consumers from corporations in the private sector, but in the state-individual relationship, <strong>the state occupies a superior position</strong>. Under Article 40 of China's Constitution, state security agencies may access communications when necessary. China's Cybersecurity Law (2017) mandates that personal and sensitive information generated by critical information infrastructure be stored domestically, and in practice designates virtually all digital technology entities as critical infrastructure—bringing nearly all data generated in China under government management.</p>
-<p>The social credit system further integrates financial, commercial, social, and administrative data into a single system, enabling new types of data production and qualitatively enhancing data concentration. China's authoritarian data governance paradoxically maximizes efficiency in data access speed and collection scope, making it easier to convert data into a strategic national resource without incurring the democratic costs of privacy debates and human rights protections.</p>
-<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 mt-4">2. Data Governance and the Strategic Competition</p>
-<p class="mb-3">China's government has directly linked digital technology innovation to national strategy through "top-level design" (顶层设计). President Xi Jinping has personally emphasized AI, big data, IoT, and quantum computing as transformative technologies requiring state-led development. China's Military-Civil Fusion strategy actively converts civilian technologies into military capabilities, leveraging data collected in the civilian domain to advance AI-enabled military technology.</p>
-<p class="mb-3">In response, the United States has enacted legislation restricting data flows to China—including the National Security &amp; Personal Data Protection Act (2019), executive orders banning TikTok and WeChat, and the Clean Network Initiative to decouple from Chinese tech companies. The United States has also elevated human rights criticisms, sanctioning Chinese AI companies over their role in Xinjiang surveillance.</p>
-<p>Digital transformation has created data resources with dual characteristics—personal information and strategic assets—making U.S.-China competition increasingly complex. The United States frames data leakage as a security threat while highlighting the risk of personal information flowing to the Chinese government, bringing values and human rights to the fore. Bans on Chinese 5G equipment, the Quad, the Summit for Democracy, and semiconductor alliances are all being pursued within the context of checking China's data rise.</p>
-</div>
-
-<!-- Section V -->
-<div>
-<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">V.</span> Conclusion</h3>
-<p class="mb-3">U.S.-China strategic competition has evolved from trade disputes into technological strategic competition, now developing into interstate competition over digital platforms combined with the logic of ideological confrontation. The transformation into a "competition over the platform of platforms" is rooted in the fact that data has acquired the status of a resource through digital transformation.</p>
-<p class="mb-3">This study argued that GPT-driven creative destruction has reshaped the character of U.S.-China strategic competition. Data resources are the necessary and sufficient condition for operating AI—the core technology of digital transformation—and have emerged as a new game-changer. While all states seek to secure maximum data, partial excludability simultaneously generates positive externalities (enhancing rival states' power) and negative externalities (personal data leakage), while non-rivalry means data leakage leads to perpetual competitiveness loss.</p>
-<p class="mb-3">China has leveraged the control and efficiency of its authoritarian system to rapidly enter the digital transformation era, dominating in data volume and concentration. It simultaneously works to overcome its diversity disadvantage through Belt and Road digital connectivity and state-led data governance, converting data into a national strategic resource without paying the democratic costs of privacy protections. The United States, constrained by population size, institutional limits, and democratic governance costs, cannot match China in data concentration and is limited in national-level data utilization. It therefore leverages alliances, multilateralism, and international regulations to check China's diversity-securing efforts.</p>
-<p class="mb-3">Behind the development of U.S.-China strategic competition into systemic rivalry lies a new strategic game over data competitiveness—the core of AI capability. Unlike other GPTs, the efficiency of data collection is greater in authoritarian systems, and data can be strategically mobilized through civilian-military dual use. The United States has therefore framed competition as a binary opposition between "techno-authoritarianism" and "techno-democracy." As long as the "distance of value" in data governance does not narrow, this competition will inevitably continue to develop.</p>
-<p>This study represents foundational research tracing GPT-driven social changes and their impact on U.S.-China strategic competition. Future research should analyze the data strategies of third countries beyond the United States and China, and conduct comparative analyses of democratic versus authoritarian state approaches to data governance to enhance the theory's explanatory power.</p>
-</div>
-
-</div>
-</div>
-</div>
-</div>
 
 <!-- Modal: LLM Discourse Report -->
 <div id="modal-llm-discourse" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
@@ -724,6 +676,105 @@ This working paper analyzes how nationalist rhetoric influences China's foreign 
 </div>
 </div>
 
+<!-- Modal: English Translation of Peer-Reviewed Paper -->
+<div id="modal-english-paper" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target===this)this.classList.add('hidden')">
+<div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+<div class="p-8">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-primary tracking-widest uppercase">English Translation · Full Paper</span>
+<button onclick="document.getElementById('modal-english-paper').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 mb-1 leading-snug">Data as a Strategic Resource: China's Data Strategy and the Transformation of U.S.-China Rivalry</h2>
+<p class="text-sm text-slate-500 mb-1">Inwoo Lee &amp; Hee-ok Lee</p>
+<p class="text-xs text-slate-400 mb-6 italic">Originally published in Korean: <span class="not-italic">Korea &amp; World Politics</span>, 37(2), 217–251 (2021). DOI: 10.17331/kwp.2021.37.2.006</p>
+
+<div class="space-y-6 text-slate-700 text-sm leading-relaxed">
+
+<!-- Abstract -->
+<div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+<h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-3">Abstract</h3>
+<p class="mb-3">This study analyzes U.S.-China relations through the lens of data, which has emerged as a new strategic resource driven by digital transformation powered by general-purpose technologies (GPTs). Because digital technologies—as dual-use technologies—consume data as their primary input, securing data resources is essential for enhancing national power. Both the United States and China have rapidly entered the digital transformation era and are advancing digital transitions and data trade to strengthen their data competitiveness. As a result, China holds a comparative advantage in data <em>concentration</em> while the United States holds an advantage in data <em>diversity</em>; however, China is currently strengthening its connectivity with neighboring countries to partially compensate for its diversity deficit.</p>
+<p class="mb-3">Meanwhile, as nations pursue data competitiveness, the partial-excludability characteristics of data resources generate an external effect of sensitive information leakage. Managing this leakage while efficiently utilizing data makes data governance a cornerstone of national strategy. The democratic United States faces significant constraints on governmental data use—including complex procedures and human rights concerns—while authoritarian China enables the government to rapidly access all data generated domestically. In short, China can more readily mobilize competitive data as a national strategic resource.</p>
+<p>This paper argues that the core logic behind the United States' pursuit of value-based alliance diplomacy and decoupling from China lies in checking China's data strategy and maintaining U.S. hegemony.</p>
+<div class="mt-3 pt-3 border-t border-slate-200">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Keywords: </span>
+<span class="text-xs text-slate-500">U.S.-China Strategic Competition · General Purpose Technology (GPT) · Data Strategy · Data Governance · Data Competitiveness</span>
+</div>
+</div>
+
+<!-- Section I -->
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">I.</span> Introduction</h3>
+<p class="mb-3">Since the normalization of U.S.-China diplomatic relations in 1979, American policy toward China has fluctuated yet maintained a broadly accommodative approach as one of its pillars. However, with the rise of "America First" under the Trump administration, the United States intensified its competitive approach, and this strategic competition has deepened further under the Biden administration, with elements of systemic rivalry beginning to emerge. Within the spectrum of competition, cooperation, and confrontation in U.S.-China relations, strategic competition centering on technology and economics has grown increasingly intense, shaping conflicts in the ideological, institutional, and military domains.</p>
+<p class="mb-3">The reason this U.S.-China strategic competition revolves around technology is that the current wave of technological innovation involves general-purpose technologies (GPTs), which both countries recognize as game-changers for the international order. GPTs diffuse across virtually all sectors of society, generating creative destruction, and possess dual-use characteristics that bring structural changes to international politics and decisively affect the balance of hegemonic power.</p>
+<p class="mb-3">This paper focuses on the dynamics of international politics driven by GPTs and highlights the fact that intensifying U.S.-China strategic competition is unfolding around data resources. In the digital transformation era, securing data is a critical national strategy for all states, and nations seek to achieve both concentration and diversity in data competitiveness. However, during the process of data acquisition, data leakage occurs, generating both a positive externality (enhancing a rival state's competitiveness) and a negative externality (personal information leakage). Therefore, data governance—which aims to optimize the balance between data competitiveness and the minimization of these externalities—is at the heart of national strategy.</p>
+<p>In particular, China's data strategization operates within an authoritarian data governance framework, and the United States has used this as the basis for drawing a line between "techno-authoritarianism" and "techno-democracy." Since there are fundamentally no effective sanctions against data strategization, the U.S. response is limited to "blame games" and critiques of power dynamics—indirect and, in that sense, all the more strategically complex.</p>
+</div>
+
+<!-- Section II -->
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">II.</span> General Purpose Technology (GPT) and Data as a Strategic Resource</h3>
+<p class="mb-3">While there is no clear consensus on the concept of the GPT driving the current technological revolution, there is broad agreement that society has entered a stage of "digital transformation." Digital transformation signifies a shift toward a data-driven value creation system in which IoT, cloud computing, big data, 5G, robotics, and AI interconnect to form a cyber-physical system (CPS)-based data circulation structure that merges the virtual and physical worlds.</p>
+<p class="mb-3">In the digital transformation era, data holds a different value than before. With GPT innovation, technologies emerged for collecting, storing, and processing massive volumes of data, giving rise to a data circulation structure in which AI develops on the basis of data. Data thus became a necessary and sufficient condition for operating the digital transformation society: it acquired the status of a resource.</p>
+<p class="mb-3">However, competition over data exhibits different dynamics than competition over natural resources like oil, due to data's two key characteristics. First, <strong>non-rivalry</strong>: data resources can be easily replicated and reused indefinitely, and thanks to AI's machine learning "self-learning" capability, data follows the law of increasing returns to scale. Second, <strong>partial excludability</strong>: data can be replicated and transmitted easily, allowing third parties to access data without payment. Because of this, the risk of data leakage is ever-present, generating both positive externalities (enhancing a rival state's national power) and negative externalities (personal information leakage).</p>
+<p class="mb-3">In this context, the type of data collected determines data competitiveness, measured by two key indicators:</p>
+<ul class="list-none space-y-1 mb-3 pl-4">
+<li class="flex gap-2"><span class="text-primary font-bold">•</span><span><strong>Data concentration (depth)</strong>: the capacity to uniformly accumulate all data generated domestically through digital transformation.</span></li>
+<li class="flex gap-2"><span class="text-primary font-bold">•</span><span><strong>Data diversity</strong>: the capacity to accumulate data generated by users from diverse groups—different ethnicities, cultures, and so on.</span></li>
+</ul>
+<p>These two factors are important because AI's machine learning technology is based on probability and statistics: the greater the number and variety of data samples, the higher the predictive accuracy AI achieves. States therefore seek an optimal strategy through data governance, balancing data competitiveness with minimization of externalities. Data governance thus takes the form of questions about who holds authority over data management, and manifests differently depending on how data sovereignty is interpreted.</p>
+</div>
+
+<!-- Section III -->
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">III.</span> China's Data Strategization: Concentration and Diversity</h3>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">1. Concentration Advantage and Expansion of the Data Pool</p>
+<p class="mb-3">Beginning in 2012, the Chinese government began to prioritize big data industries for policy support. At the Fifth Plenary Session of the 18th Central Committee of the CCP in 2015, big data was officially recognized as a national-level foundational strategic resource. China came to regard data as the core of its national strategic resources and formulated a state-led innovation strategy to advance the convergence of digital technologies with society—most visibly through the Smart City construction initiative.</p>
+<p class="mb-3">China's digital transformation is proceeding at the fastest pace in the world. Its vast internet user base—approaching one billion people—generates enormous amounts of data: by 2016, China's e-commerce transaction volume accounted for 40% of the global total, mobile payment transactions were 11 times those of the United States, and domestic data generation surpassed the United States after 2016, with the gap projected to widen further.</p>
+<p class="mb-3">China also built a network of big data exchanges—starting with the world's first in Guiyang (2014)—enabling data trading across virtually all sectors. This accelerated data circulation and amplified China's data pool.</p>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 mt-4">2. Diversity Disadvantage and Strengthening of Connectivity</p>
+<p class="mb-3">The United States dominates in data <em>diversity</em> due to globally dominant digital platforms: Google, YouTube, and Facebook collect data on a global scale, ranking first through third globally in monthly site visitors. The world's largest data brokers are concentrated in the United States—Acxiom, for example, holds data on 700 million people worldwide. As of 2017, the United States sees 25 TB of cross-border data flowing per second versus just 5 TB for China.</p>
+<p class="mb-3">China, recognizing this diversity deficit, is strengthening connectivity with Belt and Road countries through a Digital Silk Road strategy—encompassing digital technology cooperation, data trading, cross-border e-commerce, 5G network construction, and smart city technology transfer. China has also adopted a Central Bank Digital Currency (CBDC), which, combined with the Cross-border Interbank Payment System (CIPS), challenges the U.S. SWIFT payment system.</p>
+<p>If Belt and Road countries—representing 44% of the global population—generate data that circulates centering on China, China could partially compensate for its diversity disadvantage. This consolidates a China-centered digital economy Regional Value Chain (RVC) and, through "choke point effects" and "Panopticon effects," could enable China to gain significant network power.</p>
+</div>
+
+<!-- Section IV -->
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">IV.</span> Data Sovereignty and Governance Conflicts</h3>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">1. Data Sovereignty</p>
+<p class="mb-3">The United States has historically treated data as an <strong>economic asset</strong>. Data sovereignty resides primarily with private enterprises. Comprehensive federal-level privacy legislation does not exist; instead, sector-specific laws apply, and corporate data violations are handled through civil litigation rather than government-imposed fines. As data began to be treated as a strategic resource, state-level comprehensive privacy laws emerged—California's Consumer Privacy Act of 2018 being the most prominent—but government intervention remains minimized and the norm of market self-regulation is maintained.</p>
+<p class="mb-3">The FBI's request that Apple unlock a terrorist's iPhone—which Apple refused on privacy grounds—illustrates this tension: even national security purposes do not automatically override individual data rights, and divergent court rulings across states reflect the absence of a clear national standard.</p>
+<p class="mb-3">China's approach is fundamentally different. Its data protection policy focuses on protecting consumers from corporations in the private sector, but in the state-individual relationship, <strong>the state occupies a superior position</strong>. Under Article 40 of China's Constitution, state security agencies may access communications when necessary. China's Cybersecurity Law (2017) mandates that personal and sensitive information generated by critical information infrastructure be stored domestically, and in practice designates virtually all digital technology entities as critical infrastructure—bringing nearly all data generated in China under government management.</p>
+<p>The social credit system further integrates financial, commercial, social, and administrative data into a single system, enabling new types of data production and qualitatively enhancing data concentration. China's authoritarian data governance paradoxically maximizes efficiency in data access speed and collection scope, making it easier to convert data into a strategic national resource without incurring the democratic costs of privacy debates and human rights protections.</p>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 mt-4">2. Data Governance and the Strategic Competition</p>
+<p class="mb-3">China's government has directly linked digital technology innovation to national strategy through "top-level design" (顶层设计). President Xi Jinping has personally emphasized AI, big data, IoT, and quantum computing as transformative technologies requiring state-led development. China's Military-Civil Fusion strategy actively converts civilian technologies into military capabilities, leveraging data collected in the civilian domain to advance AI-enabled military technology.</p>
+<p class="mb-3">In response, the United States has enacted legislation restricting data flows to China—including the National Security &amp; Personal Data Protection Act (2019), executive orders banning TikTok and WeChat, and the Clean Network Initiative to decouple from Chinese tech companies. The United States has also elevated human rights criticisms, sanctioning Chinese AI companies over their role in Xinjiang surveillance.</p>
+<p>Digital transformation has created data resources with dual characteristics—personal information and strategic assets—making U.S.-China competition increasingly complex. The United States frames data leakage as a security threat while highlighting the risk of personal information flowing to the Chinese government, bringing values and human rights to the fore. Bans on Chinese 5G equipment, the Quad, the Summit for Democracy, and semiconductor alliances are all being pursued within the context of checking China's data rise.</p>
+</div>
+
+<!-- Section V -->
+<div>
+<h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2"><span class="text-primary font-black">V.</span> Conclusion</h3>
+<p class="mb-3">U.S.-China strategic competition has evolved from trade disputes into technological strategic competition, now developing into interstate competition over digital platforms combined with the logic of ideological confrontation. The transformation into a "competition over the platform of platforms" is rooted in the fact that data has acquired the status of a resource through digital transformation.</p>
+<p class="mb-3">This study argued that GPT-driven creative destruction has reshaped the character of U.S.-China strategic competition. Data resources are the necessary and sufficient condition for operating AI—the core technology of digital transformation—and have emerged as a new game-changer. While all states seek to secure maximum data, partial excludability simultaneously generates positive externalities (enhancing rival states' power) and negative externalities (personal data leakage), while non-rivalry means data leakage leads to perpetual competitiveness loss.</p>
+<p class="mb-3">China has leveraged the control and efficiency of its authoritarian system to rapidly enter the digital transformation era, dominating in data volume and concentration. It simultaneously works to overcome its diversity disadvantage through Belt and Road digital connectivity and state-led data governance, converting data into a national strategic resource without paying the democratic costs of privacy protections. The United States, constrained by population size, institutional limits, and democratic governance costs, cannot match China in data concentration and is limited in national-level data utilization. It therefore leverages alliances, multilateralism, and international regulations to check China's diversity-securing efforts.</p>
+<p class="mb-3">Behind the development of U.S.-China strategic competition into systemic rivalry lies a new strategic game over data competitiveness—the core of AI capability. Unlike other GPTs, the efficiency of data collection is greater in authoritarian systems, and data can be strategically mobilized through civilian-military dual use. The United States has therefore framed competition as a binary opposition between "techno-authoritarianism" and "techno-democracy." As long as the "distance of value" in data governance does not narrow, this competition will inevitably continue to develop.</p>
+<p>This study represents foundational research tracing GPT-driven social changes and their impact on U.S.-China strategic competition. Future research should analyze the data strategies of third countries beyond the United States and China, and conduct comparative analyses of democratic versus authoritarian state approaches to data governance to enhance the theory's explanatory power.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- Back to Tabs Button -->
+<button id="back-to-tabs" onclick="document.getElementById('section-tabs').scrollIntoView({behavior:'smooth'})" class="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-primary text-white text-sm font-bold px-4 py-2.5 rounded-full shadow-lg hover:brightness-110 transition-all opacity-0 pointer-events-none">
+  <span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+  Back to Menu
+</button>
+
 <!-- Footer -->
 <footer class="text-white py-12 px-6 md:px-20 border-t border-slate-800 bg-[#0f172a]">
 <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
@@ -747,9 +798,9 @@ Research, policy analysis, and strategic advisory work at the intersection of te
 <div>
 <h4 class="text-primary font-bold text-sm mb-4 uppercase tracking-wider">Navigation</h4>
 <ul class="text-slate-400 text-sm flex flex-col gap-2">
-<li><a href="../about_page_updated_header_theme/index.html" class="hover:text-white transition-colors">About</a></li>
-<li><a href="../projects_page_updated_header_theme/index.html" class="hover:text-white transition-colors">Projects</a></li>
-<li><a href="../publications_page_updated_header_theme/index.html" class="hover:text-white transition-colors">Publications</a></li>
+<li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+<li><a href="/projects" class="hover:text-white transition-colors">Projects</a></li>
+<li><a href="/publications" class="hover:text-white transition-colors">Publications</a></li>
 <li><a href="../Inwoo_Resume.pdf" download class="hover:text-white transition-colors">Resume</a></li>
 </ul>
 </div>
@@ -792,5 +843,69 @@ function toggleAbstract(id, btn) {
   const icon = btn.querySelector('.material-symbols-outlined');
   icon.textContent = isHidden ? 'expand_more' : 'expand_less';
 }
+
+// Sticky tab highlighting
+(function() {
+  const sectionIds = ['peer-reviewed', 'policy-reports', 'working-papers', 'editorial-roles'];
+  const tabMap = {
+    'top':              document.getElementById('tab-all'),
+    'peer-reviewed':    document.getElementById('tab-peer-reviewed'),
+    'policy-reports':   document.getElementById('tab-policy-reports'),
+    'working-papers':   document.getElementById('tab-working-papers'),
+    'editorial-roles':  document.getElementById('tab-editorial-roles'),
+  };
+
+  function setActive(key) {
+    Object.values(tabMap).forEach(function(tab) {
+      if (!tab) return;
+      tab.classList.remove('border-primary', 'text-slate-900');
+      tab.classList.add('border-transparent', 'text-slate-500');
+    });
+    var active = tabMap[key] || tabMap['top'];
+    if (active) {
+      active.classList.remove('border-transparent', 'text-slate-500');
+      active.classList.add('border-primary', 'text-slate-900');
+    }
+  }
+
+  var currentSection = 'top';
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        currentSection = entry.target.id;
+        setActive(currentSection);
+      }
+    });
+  }, { rootMargin: '-15% 0px -80% 0px', threshold: 0 });
+
+  sectionIds.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // Reset to "All" when scrolled near the top (above first section)
+  window.addEventListener('scroll', function() {
+    var firstSection = document.getElementById('peer-reviewed');
+    if (firstSection && window.scrollY < firstSection.offsetTop - 200) {
+      setActive('top');
+    }
+  }, { passive: true });
+})();
+
+// Back to tabs button visibility
+(function() {
+  var btn = document.getElementById('back-to-tabs');
+  var tabs = document.getElementById('section-tabs');
+  window.addEventListener('scroll', function() {
+    var tabsBottom = tabs.getBoundingClientRect().bottom;
+    if (tabsBottom < 0) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    } else {
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
+    }
+  }, { passive: true });
+})();
 </script>
 </body></html>
