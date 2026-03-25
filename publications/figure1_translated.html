@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 1 – Data Resourceification and National Strategy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #f5f4f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .figure-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+  }
+
+  .diagram {
+    background: #fff;
+    border: 1.5px solid #b0afa8;
+    padding: 28px 28px 24px;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* TOP LABEL */
+  .top-label {
+    border: 1.5px solid #555;
+    padding: 6px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: #fff;
+    margin-bottom: 14px;
+  }
+
+  /* COMPETITIVENESS BLOCK */
+  .competitiveness-block {
+    border: 1.5px solid #aaa;
+    background: #eeecea;
+    width: 100%;
+    padding: 16px 16px 18px;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 0;
+  }
+
+  .sub-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sub-label {
+    border: 1.5px solid #666;
+    padding: 4px 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-align: center;
+    background: #fff;
+    align-self: center;
+    min-width: 110px;
+  }
+
+  .strategy-box {
+    border: 1.5px solid #888;
+    background: #fff;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+
+  .strategy-box strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .strategy-box .items {
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  /* ARROW + GOVERNANCE */
+  .middle-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0 10px;
+    gap: 0;
+  }
+
+  .arrow-up {
+    width: 0; height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 18px solid #555;
+  }
+
+  .governance-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .governance-box {
+    border: 1.5px solid #555;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+  }
+
+  .brace-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #333;
+    border-left: 2px solid #666;
+    padding-left: 10px;
+  }
+
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 18px solid #555;
+  }
+
+  /* SOVEREIGNTY LABEL */
+  .sovereignty-label {
+    border: 1.5px solid #555;
+    padding: 6px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: #fff;
+    margin-bottom: 14px;
+  }
+
+  /* EXTERNALITIES BLOCK */
+  .externalities-block {
+    border: 1.5px solid #aaa;
+    background: #eeecea;
+    width: 100%;
+    padding: 16px 16px 18px;
+    display: flex;
+    gap: 14px;
+  }
+
+  .ext-sub {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .ext-label {
+    border: 1.5px solid #666;
+    padding: 4px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    background: #fff;
+  }
+
+  .ext-box {
+    border: 1.5px solid #888;
+    background: #fff;
+    padding: 18px 14px;
+    font-size: 12.5px;
+    text-align: center;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+  }
+
+  .caption {
+    font-size: 11.5px;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<p class="figure-title">&lt;Figure 1&gt; Data Resourceification and National Strategy</p>
+
+<div class="diagram">
+
+  <!-- TOP: Data Competitiveness -->
+  <div class="top-label">Data Competitiveness</div>
+
+  <!-- Concentration + Diversity block -->
+  <div class="competitiveness-block">
+    <!-- Concentration -->
+    <div class="sub-block">
+      <div class="sub-label">C o n c e n t r a t i o n</div>
+      <div class="strategy-box">
+        <strong>Strategy</strong>
+        Expansion of the data pool
+        <div class="items">Smart City<br>Integration of digital technology into industry</div>
+      </div>
+    </div>
+    <!-- Diversity -->
+    <div class="sub-block">
+      <div class="sub-label">D i v e r s i t y</div>
+      <div class="strategy-box">
+        <strong>Strategy</strong>
+        External expansion of data circulation structure
+        <div class="items">Digital economy cooperation<br>Data trade</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle: arrows + governance -->
+  <div class="middle-row">
+    <div class="arrow-up"></div>
+    <div class="governance-row">
+      <div class="governance-box">Data Governance: Optimization</div>
+      <div class="brace-labels">
+        <span>Data access speed</span>
+        <span>Scope of data collection</span>
+      </div>
+    </div>
+    <div class="arrow-down"></div>
+  </div>
+
+  <!-- Data Sovereignty -->
+  <div class="sovereignty-label">Data Sovereignty</div>
+
+  <!-- Positive + Negative externalities -->
+  <div class="externalities-block">
+    <div class="ext-sub">
+      <div class="ext-label">Positive Externalities</div>
+      <div class="ext-box">Enhancement of counterpart's national power</div>
+    </div>
+    <div class="ext-sub">
+      <div class="ext-label">Negative Externalities</div>
+      <div class="ext-box">Leakage of personal &amp; sensitive information</div>
+    </div>
+  </div>
+
+</div>
+
+<p class="caption">Translated from Korean original.</p>
+
+</body>
+</html>
