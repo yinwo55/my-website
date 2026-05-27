@@ -1,0 +1,598 @@
+---
+title: "Global Terrorism"
+subtitle: "S670 EDA (Group 13)"
+author: "Inwoo Lee, Joohyun Kim"
+date: "2026-05-03"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+indent: true
+header-includes:
+  - \usepackage{titling}
+  - \setlength{\droptitle}{-2cm}
+  - \usepackage[normalem]{ulem}
+  - \usepackage{float}
+  - \usepackage{xcolor}
+  - \usepackage{indentfirst}
+  - \setlength{\parindent}{1.5em}
+  - \setlength{\parskip}{3pt}
+---
+
+
+\section{1. Statement of Purpose}
+
+Terrorism is commonly understood as a form of political communication in which violence is used to convey grievances and demands to a broader audience. In this sense, claiming responsibility for an attack is a crucial mechanism through which perpetrators signal their identity and intentions. Yet, a substantial number of terrorist attacks go unclaimed, presenting a puzzle for existing theories of terrorism. If terrorism is designed to communicate, why do perpetrators sometimes conceal their identity?
+
+Changes in the international environment, particularly the expansion of counterterrorism efforts and the increased risk of retaliation, have made public attribution more costly (Hoffman 1997). In this context, the trade-off between organizational security and political influence becomes more pronounced (McCormick 2003). As a result, terrorist organizations may strategically withhold claims when attacks involve civilian targets, as such actions carry heightened political risks. At the same time, observational evidence suggests that some of the most lethal attacks are also less likely to be claimed (Abrahms and Conrad 2017). 
+
+What factors, then, influence the probability of a claim? By revealing the motivation behind claiming responsibility, we can identify a key factor in the hidden dynamics of terrorist attacks; when combined with other existing data, this is expected to provide insights into the targets, scope, and methods of terrorist operations.
+
+\section{2. Data Description}
+
+To answer our research question, we obtained access to the Global Terrorism Database (GTD)\footnote{For more detailed information, please refer to \textbf{Global Terrorism Database (GTD)}, https://www.start.umd.edu/data-tools/GTD}, a comprehensive and exclusive dataset curated by the National Consortium for the Study of Terrorism and Responses to Terrorism (START). The GTD is an event-level database containing more than 200,000 records of terrorist attacks that took place around the world since 1970. It is maintained by the National Consortium for the Study of Terrorism and Responses to Terrorism (START) at the University of Maryland. It is also the basis for other terrorism-related databases, such as the Global Terrorism Index (GTI) published by the Institute for Economics and Peace. As of 2025, the GTD is closed and is only accessible by requesting use via giving personal information.
+
+\subsection{2.1. Variables}
+
+Our analysis covers terrorist incidents recorded between 1970 and 2021, yielding a total of 111,192 observations. From the 135 variables available in the original Global Terrorism Database (GTD), we selected five primary variables for our empirical model. The dependent variable is \textbf{Claimed Responsibility (\textit{claimed})}, a dichotomous measure indicating whether a perpetrator or entity explicitly took credit for the incident ($1 = \text{Yes}$, $0 = \text{No}$).
+
+The primary independent variable, \textbf{Target Type (\textit{targhard})}, was re-operationalized from the original categorical data (\textit{targtype1}) to distinguish between "soft" and "hard" targets—a distinction widely utilized in terrorism literature. Soft targets generally comprise unarmed civilians and vulnerable infrastructure, whereas hard targets include protected or armed actors such as military personnel, law enforcement, and government facilities. This distinction reflects inherent differences in both vulnerability and responsive capacity, which subsequently shape the political risks associated with such attacks (Logan et al. 2025).
+
+Fatality levels are also categorized to capture meaningful variations in attack severity. While many studies utilize relatively low thresholds (e.g., three or four casualties), the distribution of fatalities is highly skewed, with a minority of incidents accounting for a disproportionately large number of casualties. To account for this, we distinguish between four levels of fatalities: \textit{none, mild, severe,} and \textit{mass}. This classification draws on existing scholarly thresholds, such as the ten-casualty benchmark, to isolate particularly severe events (Kim et al. 2020; WHO 2007).
+
+To ensure the robustness of our findings, we include several control variables related to incident and weapon characteristics. \textbf{Success} is treated as a dichotomous variable based on the tangible outcome of the attack ($1 = \text{Successful}$, $0 = \text{Unsuccessful}$). We also account for the primary \textbf{Attack Type} and the \textbf{Weapon Type} utilized. Attack types are categorized into nine distinct methods, ranging from assassinations and bombings to kidnappings and facility attacks. Weaponry is classified into three tiers: (1) CBRN (chemical, biological, radiological, and nuclear) weapons, which are designed to produce significantly higher levels of casualties; (2) conventional weapons, including firearms, explosives, and incendiary devices; and (3) non-lethal or sabotage-related implements.
+
+\subsection{2.2. Processing Data}
+
+To ensure a rigorous methodological approach, we implemented a multi-stage data filtering process. We began with an initial dataset of 140,243 incidents from the Global Terrorism Database (GTD). In a departure from the standard GTD practice, which often includes cases satisfying only two out of three inclusion criteria, we subsetted the data to include only those observations that strictly meet all three criteria. This initial filter resulted in 119,448 incidents, effectively excluding 20,795 observations that did not meet our stringent definition of terrorism.
+
+Subsequently, we refined the dataset by excluding observations where the dependent variable, \textit{claimed}, contained missing values (NA) or non-response codes (-9). Furthermore, we reclassified the weapon types used in the attacks and excluded cases where the primary weaponry was categorized as unknown. Following these refinements, our final analytical dataset consists of 111,192 observations, representing a data retention rate of approximately 79.3% from the original raw data, or a high degree of consistency within the validated terrorist incident subset.
+
+```{r, include = FALSE}
+library(arrow)
+library(dplyr)
+library(arrow)
+library(car)
+library(ggplot2)
+library(arm)
+library(scales)
+library(patchwork)
+```
+```{r, include = FALSE}
+file_path <- "C:/Users/yonwo/OneDrive/바탕 화면/PH.D/course work/6th Semester/EDA/Final Project/final/data/data/gtd_total.parquet"
+gtd_total <- read_parquet(file_path)
+```
+
+```{r, include = FALSE}
+gtd_total <- gtd_total |> 
+  filter(claimed != -9) |> 
+  mutate(
+    claimed = as.factor(claimed),
+    success = as.factor(success),
+    targtype1 = as.numeric(targtype1),
+    attacktype1 = as.factor(attacktype1),
+    weaptype1 = as.factor(weaptype1),
+    nkill = as.numeric(nkill)
+    ) |> 
+  tidyr::drop_na(claimed, success, targtype1, weaptype1, attacktype1, nkill)
+
+gtd_total$targhard <- ifelse(gtd_total$targtype1 %in% c(2, 3, 4, 7, 17, 22), 1, 0)
+gtd_total$targhard <- factor(gtd_total$targhard)
+```
+
+```{r, include = FALSE}
+gtd_terr <- gtd_total |> 
+  filter(crit1 != 0, crit2 != 0, crit3 != 0)
+```
+
+```{r, include = FALSE}
+gtd_terror <- gtd_total |> 
+  filter(crit1 != 0, crit2 != 0, crit3 != 0)
+```
+
+
+```{r, include=FALSE}
+total_n <- nrow(gtd_total)
+terror_n <- nrow(gtd_terror)
+diff_n <- total_n - terror_n
+perc_kept <- (terror_n / total_n) * 100
+
+cat("----------------------------------------------\n")
+cat("Summary of Data Filtering Process\n")
+cat("----------------------------------------------\n")
+cat("Initial Dataset (gtd_total)      :", format(total_n, big.mark=","), "\n")
+cat("Filtered Dataset (gtd_terror)    :", format(terror_n, big.mark=","), "\n")
+cat("Excluded Observations            :", format(diff_n, big.mark=","), "\n")
+cat("Data Retention Rate              :", round(perc_kept, 2), "%\n")
+cat("----------------------------------------------\n")
+```
+
+```{r, include = FALSE}
+# Relabeling
+gtd_terror <- gtd_terror %>%
+  filter(weaptype1 != 13) %>%
+  mutate(weaptype_new = case_when(
+    weaptype1 %in% c(1, 2, 3, 4) ~ 1,      # CBRN (Chemical, Biological, Radioactive, Nuclear weapons)
+    weaptype1 %in% c(5, 6, 8, 9, 10, 12) ~ 2, # Conventional: Firearms, Explosives, Incendiary, Melee, Vehicle, Other
+    weaptype1 %in% c(7, 11) ~ 3,           # Non-lethal/Sabotage: Fake, Sabotage
+    TRUE ~ NA_real_                        
+  ))
+```
+
+```{r, echo = FALSE, warning = FALSE}
+# transform to factor
+gtd_terror <- gtd_terror %>%
+  mutate(weaptype_label = factor(weaptype_new, 
+                                 levels = c(1, 2, 3),
+                                 labels = c("CBRN", "Conventional", "Sabotage/Fake")))
+```
+
+\section{3. Exploratory Data Analysis (EDA)}
+
+Prior to model selection, we conducted an exploratory analysis of the bivariate relationship between the dependent and independent variables to identify preliminary patterns that could inform our specification.
+
+\subsection{3.1. The Operationalization of Fatality Levels}
+
+The original "number of fatalities" variable was continuous; however, EDA revealed that the majority of attacks resulted in ten or fewer fatalities. Despite this, several large-scale terrorist events persisted as significant outliers. To mitigate this skewness, a logarithmic transformation was applied, yet substantial outliers remained, and the distribution exhibited wave-like fluctuations rather than a consistent pattern. Consequently, we operationalized the number of fatalities as a categorical variable to ensure model robustness and interpretability.
+
+```{r, include = FALSE}
+gtd_total$nkill <- as.numeric(gtd_total$nkill)
+gtd_total <- gtd_total %>%
+  filter(!is.na(claimed))
+
+ggplot(gtd_total, aes(x = nkill, fill = factor(claimed))) +
+  geom_density(alpha = 0.4) +
+  labs(title = "Distribution of Number of Fatalities",
+       x = "Number of Fatalities",
+       y = "Density")
+
+ggplot(gtd_total, aes(x = nkill, fill = factor(claimed))) +
+  geom_density(alpha = 0.4) +
+  labs(title = "Distribution of Number of Fatalities",
+       x = "Number of Fatalities",
+       y = "Density") +
+  scale_x_continuous(limits = c(0,11),
+                     breaks = seq(0,11, by=1))
+```
+```{r fig1_2, echo=FALSE, fig.cap="Distribution of Number of Fatalities log scale vs categorical", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=4, fig.show='hold',out.width='0.48\\linewidth'}
+p1 <- ggplot(gtd_total, aes(x = log1p(nkill), fill = factor(claimed))) +
+  geom_density(alpha = 0.4) +
+  labs(title = "Distribution of Number of Fatalities (log scale)",
+       x = "log(nkill + 1)",
+       y = "Density",
+       caption = "Note: Log(n + 1) transformation is applied to fatalities.")
+
+gtd_terror <- gtd_terror %>%
+  mutate(nkill_cat = case_when(
+    nkill == 0 ~ "no",      
+    nkill >= 1 & nkill <= 2 ~ "mild", # mean = 2.246
+    nkill >= 3 & nkill <= 9 ~ "severe",           
+    nkill >= 10 ~ "mass"                       
+  )) %>%
+  mutate(nkill_cat = factor(nkill_cat,
+                            levels = c("no", "mild", "severe", "mass")))
+
+p2<- ggplot(gtd_terror, aes(x = nkill_cat, fill = factor(claimed))) +
+  geom_bar(position = "dodge", alpha = 0.4) +
+  labs(fill = "factor(claimed)",
+       title = "Distribution of Fatality Level") 
+
+p1
+p2
+
+```
+
+
+\subsection{3.2. Claiming Responsibility vs Target Type}
+
+Our exploratory analysis reveals a distinct pattern between the type of target selected by terrorists and the probability of claiming responsibility. Terrorist entities are notably more likely to claim attacks against hard targets ($20\%$) compared to soft targets ($13\%$), representing a $7\%p$ increase.This disparity likely stems from the fact that striking fortified, hard targets serves as a potent signal of a group's operational competency and capabilities, thereby enhancing its reputation. Such high-profile claims can significantly bolster a group's influence during recruitment efforts. Conversely, while attacking soft targets, such as civilian infrastructure, may increase a group's notoriety, it often invites humanitarian backlash and provides justification for counter-terrorism operations. Although further investigation is required, these preliminary findings signify the presence of a survival-influence tradeoff in the strategic calculus of claiming responsibility. 
+
+```{r, fig3, echo=FALSE, fig.cap="Claiming Responsibility vs Target Type", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=3, fig.show='hold',out.width='0.7\\linewidth'}
+# data
+gtd_full_summary <- gtd_terror %>%
+  filter(!is.na(claimed), !is.na(targhard)) %>%
+  group_by(
+    targhard = factor(targhard, labels = c("Soft", "Hard")),
+    claimed_status = factor(claimed, labels = c("Not Claimed", "Claimed"))
+  ) %>%
+  summarise(n_group = n(), .groups = "drop_last") %>%
+  mutate(
+    total_n = sum(n_group),
+    prop = n_group / total_n,
+    se = sqrt(prop * (1 - prop) / total_n)
+  )
+
+# gtd_full_summary
+
+# 2. Claimed (1)
+ggplot(subset(gtd_full_summary, claimed_status == "Claimed"), 
+             aes(x = targhard, y = prop, color = targhard)) +
+  geom_errorbar(aes(ymin = prop - 1.96*se, ymax = prop + 1.96*se), width = 0.1) +
+  geom_point(size = 4) +
+  scale_y_continuous(labels = scales::percent, limits = c(0.1, 0.25)) + # 범위 지정
+  theme_minimal() +
+  labs(title = "Probability: Claimed (1)", x = "Target Hardness", y = "Rate (%)") +
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=1),
+        legend.position = "none"
+        )
+```
+
+\subsection{3.3. Claiming Responsibility vs Lethality of Attack}
+
+Next, I examined the relationship between lethality and the probability of claiming responsibility, another key IV. As demonstrated below, an increase in lethality was associated with a higher probability of claiming responsibility. This is because higher attack fatalities allow terrorist groups to demonstrate both their brutality and organizational competency, thereby maximizing their political and social influence. 
+
+```{r, fig4, echo=FALSE, fig.cap="Probability of Claiming Responsibility by Fatality Scale", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=3, fig.show='hold',out.width='0.7\\linewidth'}
+ggplot(gtd_terror, aes(x = log1p(nkill), y = as.numeric(as.character(claimed)))) +
+  geom_jitter(height = 0.05, alpha = 0.1, color = "gray") + 
+  geom_smooth(method = "glm", method.args = list(family = "binomial"), 
+              color = "firebrick", fill = "firebrick", alpha = 0.2) +
+  scale_y_continuous(labels = scales::percent, breaks = seq(0, 1, 0.2)) + 
+  theme_minimal() +
+  labs(title = "Probability of Claiming Responsibility by Fatality Scale",
+       subtitle = "Red line represents the logistic regression fit (Log-scale X-axis)",
+       x = "Number of Fatalities (Log+1 Scale)",
+       y = "Probability of Claiming (%)")
+```
+
+\subsection{3.4. Preliminary Data Assessment}
+
+While the bivariate relationships discussed above offer initial insights, the results themselves are counterintuitive from both theoretical and conventional perspectives. Theoretically, while more brutal and difficult attacks can enhance a terrorist group's influence, they also increase the likelihood of the group being targeted by foreign governments. Given this trade-off, the observation that claiming probabilities increase alongside fatalities is theoretically unexpected. Conventionally, high-casualty attacks are typically directed at "soft targets" such as stadiums or shopping malls, rather than "hard targets" like fortified government buildings or embassies, due to the relative ease of access and lack of security. However, the data reveals that the probability of claiming responsibility for attacks on soft targets is significantly lower than for hard targets. Figure 3 illustrates this relationship between target type and the number of fatalities.
+
+```{r fig5, echo=FALSE, fig.cap="Comparison of Logistic vs GAM Fits", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=3, fig.show='hold',out.width='0.7\\linewidth'}
+# Preprocessing
+gtd_terror_clean <- gtd_terror %>%
+  filter(!is.na(nkill), !is.na(targhard)) %>%
+  mutate(targhard_num = as.numeric(as.character(targhard)),
+         targsoft_num = 1 - targhard_num)
+
+ggplot(gtd_terror_clean, aes(x = log1p(nkill), y = targhard_num)) +
+  # 1. Background Jitter
+  geom_jitter(height = 0.03, alpha = 0.02, color = "gray60", size = 0.5) + 
+  
+  # 2. Logistic Regression (Parametric)
+  geom_smooth(method = "glm", 
+              method.args = list(family = "binomial"), 
+              aes(color = "Logistic (GLM)", fill = "Logistic (GLM)"), 
+              alpha = 0.15, size = 1.2) +
+  
+  # 3. GAM Smoothing (Non-parametric)
+  geom_smooth(method = "gam", 
+              formula = y ~ s(x, bs = "cs"),
+              method.args = list(family = "binomial"),
+              aes(color = "GAM", fill = "GAM"), 
+              alpha = 0.15, size = 1.2) +
+  
+  # 4. Customizing Scales and Labels
+  scale_color_manual(name = "Model Fit", 
+                     values = c("Logistic (GLM)" = "darkred", 
+                                "GAM" = "steelblue")) +
+  scale_fill_manual(name = "Model Fit",
+                    values = c("Logistic (GLM)" = "darkred", 
+                               "GAM" = "steelblue")) +
+  scale_y_continuous(labels = scales::percent, breaks = seq(0, 1, 0.2)) +
+  scale_x_continuous(breaks = log1p(c(0, 5, 10, 50, 100, 500)), 
+                     labels = c("0", "5", "10", "50", "100", "500")) +
+  theme_minimal() +
+  labs(
+    title = "Comparison of Logistic vs. GAM Fits",
+    subtitle = "Target Hardness Probability by Fatality Scale (GTD Data)",
+    x = "Number of Fatalities (Log Scale)",
+    y = "Probability of Hard Target (%)"
+  ) +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold"))
+```
+
+As shown in the figure 3, the probability that an attack involves a hard target decreases significantly as the number of fatalities increases. This creates a complex dynamic: while both hard targets and higher fatalities are positively correlated with the probability of claiming responsibility, they are negatively correlated with each other. In other words, these bivariate signals pull in opposite directions.
+
+Consequently, a multivariate model is required to disentangle their joint and conditional effects. We employ a multivariate framework and incorporate an interaction term between target type and fatalities to specifically examine their conditional effect.
+
+\section{4. Model Selection}
+
+Guided by the results of our EDA, we incorporated an interaction term between target hardness (\textit{targhard}) and fatality levels (\textit{nkill\_cat}) to capture conditional effects. To evaluate the statistical appropriateness of this specification, we compared the interaction model against a baseline main-effects model. Model selection was conducted by assessing goodness-of-fit and parsimony through the Akaike Information Criterion (AIC) and the Bayesian Information Criterion (BIC). The specifications and comparative fit statistics for both the baseline and interaction models are provided below.
+
+```{r, include = FALSE}
+m1 <- glm(claimed ~ targhard + nkill_cat + success + attacktype1 + weaptype_new, data = gtd_terror, family = "binomial")
+
+m2 <- glm(claimed ~ targhard*nkill_cat + success + attacktype1 + weaptype_new, data = gtd_terror, family = "binomial")
+```
+
+```{r, include = FALSE}
+AIC(m2, m1)
+BIC(m2, m1)
+```
+
+\vspace{0.5em}
+\hspace{-1.5em} \textbf{Base Model}
+\begin{equation*}
+    \begin{aligned}
+        \text{logit}(P(\text{claimed}_i = 1)) = \beta_0 &+ \beta_1 \text{targhard}_i + \beta_2 \text{nkill\_cat}_i + \beta_3 \text{success}_i \\
+        &+ \beta_4 \text{attacktype}_i + \beta_5 \text{weaptype\_new}_i
+    \end{aligned}
+\end{equation*}
+
+\vspace{0.5em}
+\hspace{-1.5em} \textbf{Interaction Model}
+\begin{equation*}
+    \begin{aligned}
+        \text{logit}(P(\text{claimed}_i = 1)) = \beta_0 &+ \beta_1 \text{targhard}_i + \beta_2 \text{nkill\_cat}_i \\
+        &+ \beta_3 (\text{targhard}_i \times \text{nkill\_cat}_i) \\
+        &+ \beta_4 \text{success}_i + \beta_5 \text{attacktype}_i + \beta_6 \text{weaptype\_new}_i
+    \end{aligned}
+\end{equation*}
+
+```{r, include = FALSE}
+data.frame(
+  Model = c("Baseline model", "Interaction model"), 
+  df = c(attr(logLik(m2), "df"), attr(logLik(m1), "df")),
+  AIC = c(AIC(m2), AIC(m1)),
+  BIC = c(BIC(m2), BIC(m1))
+)
+```
+
+As shown in Table \ref{tab:model_comparison}, the interaction model yields a substantial reduction in both AIC ($\Delta = 535.09$) and BIC ($\Delta = 506.24$) compared to the baseline model. The consistent decrease in both metrics provides robust evidence that the inclusion of the interaction term between target hardness and fatality levels significantly enhances the model's explanatory power, justifying its use in the final analysis.
+
+\begin{table}[h]
+    \centering
+    \caption{Model Comparison for Terrorism Claim Analysis: Goodness-of-Fit Statistics}
+    \label{tab:model_comparison}
+    \renewcommand{\arraystretch}{1.2}
+    \vspace{2mm}
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Model} & \textbf{df} & \textbf{AIC} & \textbf{BIC} \\
+        \hline
+        Baseline Model & 15 & 95,504.99 & 95,649.28 \\
+        Interaction Model & 18 & 94,969.90 & 95,143.04 \\
+        \hline
+    \end{tabular}
+    \vspace{0.5em}
+\end{table}
+
+\section{5. Prediction \& Implication}
+
+\subsection{5.1. Main Effects}
+
+The marginal effects analysis, conducted while holding all other covariates constant, reveals critical patterns regarding the signaling behavior of terrorist organizations. Specifically, the data underscores a significant divergence in the likelihood of claiming responsibility based on both target hardness and the resulting fatality levels.
+
+Regarding the main effect of target type (figure 6, left panel), our model indicates a distinct gap in the probability of credit-taking at a fixed fatality level (e.g., "mild"). Attacks directed at hard targets, such as military or government installations, exhibit a significantly higher predicted probability of being claimed, at approximately 18%. This suggests that successfully striking protected sites serves as a potent signal of an organization' operational capability and resilience against state security. Conversely, the probability of claiming responsibility for strikes against soft targets is markedly lower, at approximately 12%, likely reflecting the diminished prestige or higher potential for public backlash associated with such targets.
+
+The main effect of fatalities reveals a more complex, non-linear relationship when holding the target type constant at "soft." Interestingly, the lowest likelihood of claiming responsibility occurs at the "mild" fatality level rather than the "no fatality" baseline. However, as the lethality of the incident escalates to "severe" or "mass" levels, the probability of claiming increases sharply, peaking at over 24% for mass-casualty events.
+
+The primary implication of these findings is that soft targets are strategically utilized for signaling purposes primarily when they achieve high levels of lethality. In instances of lower severity, the high political costs and potential for moral condemnation associated with targeting civilians may incentivize groups to maintain anonymity. Only when the scale of the attack is large enough to demonstrate significant organizational power does the signaling benefit of the claim outweigh the potential risks of public alienation.
+
+```{r, include = FALSE}
+# creating dataset 
+get_mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+base_vals <- gtd_terror %>%
+  summarise(
+    success = get_mode(success),
+    attacktype1 = get_mode(attacktype1),
+    weaptype_new = get_mode(weaptype_new)
+  )
+
+pred_dat <- expand.grid(
+  targhard = levels(gtd_terror$targhard),
+  nkill_cat = levels(gtd_terror$nkill_cat)
+)
+
+pred_dat$success <- base_vals$success
+pred_dat$attacktype1 <- base_vals$attacktype1
+pred_dat$weaptype_new <- base_vals$weaptype_new
+
+pred_dat$success <- factor(pred_dat$success, levels = levels(gtd_terror$success))
+pred_dat$attacktype1 <- factor(pred_dat$attacktype1, levels = levels(gtd_terror$attacktype1))
+```
+
+```{r, include = FALSE}
+# prediction and confidence interval
+
+pred <- predict(m2, newdata = pred_dat, type = "link", se.fit = TRUE)
+
+pred_dat <- pred_dat %>%
+  mutate(
+    pred_prob = plogis(pred$fit),
+    lower = plogis(pred$fit - 1.96 * pred$se.fit),
+    upper = plogis(pred$fit + 1.96 * pred$se.fit)
+  )
+```
+
+```{r, include = FALSE}
+# dataset
+targhard_dat <- expand.grid(
+  targhard = levels(gtd_terror$targhard),
+  nkill_cat = "mild"   # 3rd Qu. = 2; 34854 obs
+)
+
+targhard_dat$success <- get_mode(gtd_terror$success)
+targhard_dat$attacktype1 <- get_mode(gtd_terror$attacktype1)
+targhard_dat$weaptype_new <- get_mode(gtd_terror$weaptype_new)
+
+targhard_dat$targhard <- factor(targhard_dat$targhard, levels = levels(gtd_terror$targhard))
+targhard_dat$nkill_cat <- factor(targhard_dat$nkill_cat, levels = levels(gtd_terror$nkill_cat))
+targhard_dat$success <- factor(targhard_dat$success, levels = levels(gtd_terror$success))
+targhard_dat$attacktype1 <- factor(targhard_dat$attacktype1, levels = levels(gtd_terror$attacktype1))
+
+pred_tg <- predict(m2, newdata = targhard_dat, type = "link", se.fit = TRUE)
+
+targhard_dat$pred_tg <- plogis(pred_tg$fit)
+targhard_dat$lower <- plogis(pred_tg$fit - 1.96 * pred_tg$se.fit)
+targhard_dat$upper <- plogis(pred_tg$fit + 1.96 * pred_tg$se.fit)
+```
+
+```{r include = FALSE}
+# effect plot
+p3 <- ggplot(targhard_dat, aes(x = targhard, y = pred_tg)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) +
+  scale_x_discrete(labels = c("0" = "soft", "1" = "hard")) +
+  labs(
+    x = "Target type",
+    y = "Predicted probability (claimed)",
+    title = "Main Effect of Target Type",
+    subtitle = "At a fixed level of fatalities (mild)"
+  ) +
+  theme_minimal()
+```
+
+```{r, include = FALSE}
+nkill_dat <- expand.grid(
+  targhard = "0",  # soft 
+  nkill_cat = levels(gtd_terror$nkill_cat)
+)
+
+nkill_dat$success <- get_mode(gtd_terror$success)
+nkill_dat$attacktype1 <- get_mode(gtd_terror$attacktype1)
+nkill_dat$weaptype_new <- get_mode(gtd_terror$weaptype_new)
+
+nkill_dat$targhard <- factor(nkill_dat$targhard, levels = levels(gtd_terror$targhard))
+nkill_dat$nkill_cat <- factor(nkill_dat$nkill_cat, levels = levels(gtd_terror$nkill_cat))
+nkill_dat$success <- factor(nkill_dat$success, levels = levels(gtd_terror$success))
+nkill_dat$attacktype1 <- factor(nkill_dat$attacktype1, levels = levels(gtd_terror$attacktype1))
+
+pred_nk <- predict(m2, newdata = nkill_dat, type = "link", se.fit = TRUE)
+
+nkill_dat$pred_nk <- plogis(pred_nk$fit)
+nkill_dat$lower <- plogis(pred_nk$fit - 1.96 * pred_nk$se.fit)
+nkill_dat$upper <- plogis(pred_nk$fit + 1.96 * pred_nk$se.fit)
+```
+
+```{r include = FALSE}
+p4 <- ggplot(nkill_dat, aes(x = nkill_cat, y = pred_nk, group = 1)) +
+  geom_point(size = 3) +
+  geom_line() +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) +
+  labs(
+    x = "Fatality category",
+    y = "Predicted probability (claimed)",
+    title = "Main Effect of Fatalities",
+    subtitle = "At a fixed level of target(soft)"
+  ) +
+  theme_minimal()
+```
+
+```{r fig6_7, echo=FALSE, fig.cap="At a fixed level of target(soft)", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=4, fig.show='hold',out.width='0.48\\linewidth'}
+p3
+p4
+```
+
+\subsection{5.2. Interaction Effect}
+
+
+The predictive analysis of the interaction effect reveals a stark divergence in signaling strategies between attacks on "hard" versus "soft" targets as lethality increases.
+
+For hard targets, we observe a consistent and positive relationship between lethality and the probability of claiming. Across all fatality levels, attacks on protected targets are more likely to be claimed than those on soft targets. Notably, the probability of claiming rises sharply with casualties, peaking at over 50% in mass-casualty events. This suggests that high-casualty attacks on hardened targets serve as the ultimate signal of strategic effectiveness and organizational strength, providing a powerful incentive for groups to openly take credit.
+
+In contrast, signaling behavior for soft targets follows a complex, non-linear pattern. The probability of claiming for soft targets is lowest in "mild" casualty cases—falling even below the probability for incidents with no fatalities. This "U-shaped" or non-linear trend suggests that groups face significant reputational and humanitarian constraints when targeting civilians.
+
+The primary implication of these findings reveals a critical strategic trade-off: Hard targets reward claiming as casualties grow, as lethality against the state is viewed as a measure of success. However, soft targets appear to deter claiming until a specific "reputational threshold" is crossed. For soft targets, it is only at the "mass-casualty" level that the sheer magnitude of the incident' impact begins to outweigh the potential backlash, leading to a rise in claims, though this probability still remains significantly lower (approximately 25%) than that of hig, casualty hard-target attacks.
+
+```{r fig8, echo=FALSE, fig.cap="Interaction effect between Target Type and Fatality Level", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=4, fig.show='hold',out.width='0.48\\linewidth'}
+ggplot(pred_dat, aes(x = nkill_cat, y = pred_prob, group = targhard, color = targhard)) +
+  geom_point(size = 3) +
+  geom_line() +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) +
+  scale_color_manual(
+    values = c("0" = "steelblue", "1" = "darkred"),
+    labels = c("0" = "soft", "1" = "hard")
+  ) +
+  labs(
+    x = "Fatality category",
+    y = "Predicted probability of claiming",
+    title = "Predicted Probability of Claiming",
+    subtitle = "Interaction between Target Type and Fatality Level",
+    color = "Target type"
+  ) +
+  theme_minimal()
+```
+
+\subsection{5.3. Robustness Check}
+
+Our theoretical model effectively illustrates the influence-survival trade-off calculation of terrorist groups. However, the initial operationalization of the number of fatalities into four categories may have oversimplified the variable's distribution, potentially leading to a lack of fit. To ensure the consistency of our predictions, we performed a robustness check by including fatalities as a continuous variable (`nkill`). The robustness model maintains the same interaction structure as the original, with the only change being the functional form of the fatality variable.
+
+The results (figure 9) demonstrate considerable consistency with our primary findings. For hard targets, the predicted probability of claiming responsibility increases sharply and monotonically as the number of fatalities rises. Conversely, for soft targets, the probability of claiming responsibility increases more gradually and at a lower magnitude than for hard targets. This aligns with the results obtained when fatalities were treated as categorical.
+
+Notably, while the original categorical model exhibited a non-linear pattern for soft targets, the robustness model shows a gradual but monotonic increase. This shift is primarily due to the linear-in-the-parameters assumption inherent in the logit link function. By treating nkill as a single continuous term, the model constrains the relationship to follow a consistent directional trend, effectively smoothing out the local non-linearities captured by the previous categorical bins.
+
+Nevertheless, the results remain consistent with the original findings, confirming the continued validity of our model.
+
+```{r, include = FALSE}
+range(gtd_terror$nkill)
+```
+
+
+```{r, warning = FALSE, include = FALSE}
+m3  <- glm(claimed ~ targhard*nkill + success + attacktype1 + weaptype_new, data = gtd_terror, family = "binomial")
+```
+
+```{r, include = FALSE}
+pred_dat_cont <- expand.grid(
+  nkill = seq(0, 100, length.out = 100),
+  targhard = levels(gtd_terror$targhard)
+)
+
+temp_success <- get_mode(gtd_terror$success)
+temp_attack <- get_mode(gtd_terror$attacktype1)
+temp_weap <- get_mode(gtd_terror$weaptype_new)
+
+if(is.factor(gtd_terror$success)) {
+  pred_dat_cont$success <- factor(temp_success, levels = levels(gtd_terror$success))
+} else {
+  pred_dat_cont$success <- as.numeric(temp_success)
+}
+
+if(is.factor(gtd_terror$attacktype1)) {
+  pred_dat_cont$attacktype1 <- factor(temp_attack, levels = levels(gtd_terror$attacktype1))
+} else {
+  pred_dat_cont$attacktype1 <- as.numeric(temp_attack)
+}
+
+if(is.factor(gtd_terror$weaptype_new)) {
+  pred_dat_cont$weaptype_new <- factor(temp_weap, levels = levels(gtd_terror$weaptype_new))
+} else {
+  pred_dat_cont$weaptype_new <- as.numeric(temp_weap)
+}
+
+
+
+pred_robust <- predict(m3, newdata = pred_dat_cont, type = "link", se.fit = TRUE)
+
+pred_dat_cont <- pred_dat_cont %>%
+  mutate(
+    prob = plogis(pred_robust$fit),
+    lower = plogis(pred_robust$fit - 1.96 * pred_robust$se.fit),
+    upper = plogis(pred_robust$fit + 1.96 * pred_robust$se.fit)
+  )
+```
+
+```{r fig9, echo=FALSE, fig.cap="Interaction effect between Target Type and Fatality Level", fig.align="center", fig.pos="H", warning=FALSE, message=FALSE, fig.width=5, fig.height=3, fig.show='hold',out.width='0.7\\linewidth' }
+ggplot(pred_dat_cont, aes(x = nkill, y = prob, color = targhard, fill = targhard)) +
+  geom_line(size = 1) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.2, color = NA) +
+  scale_color_manual(values = c("steelblue", "darkred"), labels = c("Soft Target", "Hard Target")) +
+  scale_fill_manual(values = c("steelblue", "darkred"), labels = c("Soft Target", "Hard Target")) +
+  labs(title = "Robustness Check: Continuous nkill Model",
+       subtitle = "Predicted Probabilities by Target Hardness",
+       x = "Number of Fatalities (nkill)",
+       y = "Prob(Claimed = 1)") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+
+\section{6. Conclusion}
+
+This study examined the strategic conditions under which terrorist organizations claim responsibility for attacks, using 111,192 GTD incidents (1970–2021). Three findings stand out. First, attacks on hard targets are more likely to be claimed than those on soft targets, as striking protected state actors credibly signals organizational capability. Second, the relationship between lethality and claiming is non-linear for soft targets: claiming probability dips at mild casualty levels—where civilian harm invites moral backlash—before rising sharply at mass-casualty thresholds. Third, and most importantly, the interaction between target type and fatality level reveals fundamentally different signaling payoff structures. For hard targets, each increase in lethality raises claiming probability nearly monotonically, exceeding 50\% in mass-casualty events. For soft targets, the probability plateaus around 25\% even at the highest fatality levels, reflecting persistent reputational constraints on claiming civilian-directed violence.
+
+These results illustrate the influence-security trade-off calculation underlying terrorist attribution decisions: rather than uniformly seeking attribution, terrorist groups weigh target-specific reputational costs against the demonstrative value of lethality. Future work should incorporate group-level characteristics and temporal variation, particularly the post-9/11 counterterrorism environment and the rise of social media, to further unpack the heterogeneity in claiming behavior documented here.
+
+Despite the statistical evidence for our interaction model, this study is subject to several limitations that warrant consideration. First, the analysis is potentially affected by statistical skewness and the influence of outliers. Given the nature of global terrorism data, a small number of extreme cases, characterized by exceptionally high casualty counts, may disproportionately influence the estimated conditional effects. While our categorization of fatalities was intended to mitigate this variance, the presence of extreme outliers remains a persistent challenge in modeling the strategic behavior of extremist organizations.
+
+Second, our empirical framework may be limited by omitted internal factors (latent variables). While the GTD provides comprehensive data on incident characteristics, it often lacks detailed information regarding the internal determinants of terrorist decision-making. Factors such as shifts in leadership structure, internal factionalism, or evolving ideological priorities are difficult to observe directly but likely play a significant role in a group's propensity to claim responsibility. Future research incorporating qualitative case studies or organizational-level data could provide a more granular understanding of these latent internal dynamics.
+
+
+
+
