@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crisis in the Taiwan Strait: China's Cost-Benefit Analysis of Invading Taiwan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  :root {
+    --primary: #1a3a5c;
+    --accent: #c0392b;
+    --light-bg: #f5f7fa;
+    --border: #d0d7e2;
+    --text: #2c2c2c;
+    --subtext: #555;
+    --highlight: #fef3cd;
+  }
+
+  @page { size: A4; margin: 2.5cm; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ── Cover page ── */
+  .cover-page {
+    background: var(--primary);
+    color: #fff;
+    /* Full A4 page height minus @page margins (2.5cm each = 5cm total) */
+    height: calc(29.7cm - 5cm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    page-break-after: always;
+    border-bottom: 5px solid var(--accent);
+  }
+  .cover-page h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    max-width: 600px;
+  }
+  .cover-page .cover-subtitle {
+    font-size: 17px;
+    color: #cde0f5;
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+  .cover-page .cover-date {
+    font-size: 13px;
+    color: #a8c4e0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  /* TOC inside cover */
+  .cover-toc {
+    margin-top: 0;
+    text-align: left;
+    max-width: 520px;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    margin-bottom: 28px;
+  }
+  .cover-toc h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #a8c4e0;
+    margin-bottom: 12px;
+  }
+  .cover-toc ol {
+    list-style: none;
+    counter-reset: cv;
+    padding: 0;
+  }
+  .cover-toc ol li {
+    counter-increment: cv;
+    padding: 4px 0 4px 24px;
+    position: relative;
+    font-size: 13px;
+    color: #cde0f5;
+    line-height: 1.5;
+  }
+  .cover-toc ol li::before {
+    content: counter(cv) ".";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  /* Disclaimer inside cover */
+  .cover-disclaimer {
+    max-width: 520px;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+    font-size: 11px;
+    color: #7a9ec0;
+    line-height: 1.6;
+    text-align: left;
+  }
+  /* ── TOC page wrapper – vertically centred ── */
+  .toc-page {
+    height: calc(29.7cm - 5cm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* ── Table of Contents ── */
+  .toc {
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary);
+    padding: 16px 24px;
+    margin: 20px 0 18px;
+  }
+  .toc h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding: 0;
+  }
+  .toc ol li {
+    counter-increment: toc-counter;
+    padding: 3px 0 3px 28px;
+    position: relative;
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .toc ol li::before {
+    content: counter(toc-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .toc ol li a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  .toc ol li a:hover { text-decoration: underline; }
+
+  /* ── Executive Summary ── */
+  .exec-summary {
+    border-top: 3px solid var(--accent);
+    padding: 14px 0 20px;
+    margin-bottom: 28px;
+    background: #fff;
+  }
+  .exec-summary h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .exec-summary ul {
+    list-style: none;
+    padding: 0;
+    columns: 1;
+  }
+  .exec-summary ul li {
+    padding: 4px 0 4px 18px;
+    font-size: 13.5px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .exec-summary ul li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 7px;
+  }
+  .exec-summary strong { color: var(--accent); }
+
+  /* ── Section headings ── */
+  .section-block {
+    margin-bottom: 52px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+  }
+  .section-num {
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  h3.subsection {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 28px 0 14px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  h4.subsubsection {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--subtext);
+    margin: 20px 0 10px;
+  }
+
+  /* ── Body text ── */
+  .body-bullets {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+  .body-bullets li {
+    padding: 5px 0 5px 22px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.72;
+    margin-bottom: 4px;
+  }
+  .body-bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 6px;
+    color: var(--primary);
+    font-size: 14px;
+  }
+  .body-bullets li.arrow-bullet::before {
+    content: "➡";
+    font-size: 12px;
+    left: 2px;
+    top: 7px;
+  }
+  .body-bullets li.dash-bullet::before {
+    content: "–";
+    left: 6px;
+  }
+  .body-bullets strong { color: var(--accent); }
+
+  /* ── Callout / note box ── */
+  .callout {
+    background: var(--highlight);
+    border-left: 4px solid #e6a817;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #5a4000;
+  }
+
+  /* ── Figures ── */
+  .figure-wrap {
+    margin: 28px 0 32px;
+    text-align: center;
+  }
+  .figure-wrap img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+  }
+  .figure-caption {
+    font-size: 13px;
+    color: var(--subtext);
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .figure-source {
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+  }
+
+  /* ── Chart canvas ── */
+  .chart-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .chart-panel {
+    flex: 1;
+    min-width: 260px;
+    max-width: 360px;
+  }
+  .chart-panel h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  canvas { display: block; width: 100%; }
+
+  /* ── Map placeholder ── */
+  .map-placeholder {
+    background: #eef2f8;
+    border: 1px dashed var(--border);
+    padding: 30px;
+    text-align: center;
+    color: var(--subtext);
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .map-placeholder .icon { font-size: 36px; margin-bottom: 8px; }
+
+  /* ── Quote block ── */
+  .quote-block {
+    background: #f0f4f8;
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 18px 0;
+    font-size: 14.5px;
+    font-style: italic;
+    color: #333;
+  }
+  .quote-block .attribution {
+    font-style: normal;
+    font-size: 13px;
+    color: var(--subtext);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ── Footer ── */
+  .report-footer {
+    background: var(--primary);
+    color: #a8c4e0;
+    padding: 28px 60px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 60px;
+  }
+  .report-footer p { margin: 2px 0; }
+
+  /* ── PDF / Print ── */
+  @media print {
+    body { font-size: 13px; }
+    .cover-page { border-bottom: none; }
+    .section-block { page-break-inside: avoid; }
+    .figure-wrap { page-break-inside: avoid; margin-bottom: 20px; }
+    .exec-summary { page-break-inside: avoid; }
+    .report-footer { margin-top: 20px; }
+    .container { padding-bottom: 20px; }
+    img { max-width: 100% !important; }
+  }
+
+  @media (max-width: 700px) {
+    .report-header { padding: 32px 24px 24px; }
+    .container { padding: 0 20px 60px; }
+    .report-header h1 { font-size: 22px; }
+    .chart-container { flex-direction: column; align-items: center; }
+    .chart-panel { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<!-- ═══ COVER PAGE ═══ -->
+<div class="cover-page">
+  <h1>Crisis in the Taiwan Strait</h1>
+  <div class="cover-subtitle">China's Cost-Benefit Analysis of Invading Taiwan</div>
+  <div class="cover-date">September 13, 2022</div>
+
+  <!-- Table of Contents on cover -->
+  <nav class="cover-toc">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li>Cross-Strait Relations through the Lens of the 4th Taiwan Strait Crisis</li>
+      <li>Military Costs of Invading Taiwan</li>
+      <li>Economic Costs of Invading Taiwan</li>
+      <li>Outlook for the Taiwan Strait Crisis and Implications for the Korean Peninsula</li>
+    </ol>
+  </nav>
+
+  <!-- Disclaimer -->
+  <div class="cover-disclaimer">
+    <p>This report was originally published in Korean by the Sungkyun Institute of China Studies (SICS), Sungkyunkwan University (September 13, 2022). The original report format has been adapted for this purpose. Figures originally presented in Korean have been translated into English. Copyright © SICS. All rights reserved.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ═══ -->
+<div class="container">
+
+  <!-- TOC page wrapper kept for Executive Summary page break -->
+  <div class="toc-page">
+    <nav class="toc" style="display:none;"></nav>
+
+    <!-- Executive Summary inside TOC page -->
+    <section class="exec-summary">
+    <h2>Executive Summary</h2>
+    <ul>
+      <li>Driven by China's firm resolve to achieve unification with Taiwan in the near future—interlocked with U.S. security commitments to Taiwan—<strong>Taiwan has become the hotspot most likely to draw both powers into war.</strong></li>
+      <li>Speaker Pelosi's visit to Taiwan served three objectives: ▲<strong>(Personal)</strong> consolidating her political legacy in the fight for democracy and human rights; ▲<strong>(Party)</strong> creating a favorable electoral atmosphere for the Democratic Party ahead of midterms; ▲<strong>(US-China Competition)</strong> signaling U.S. commitment to Taiwan and dispelling doubts about American resolve on the island.</li>
+      <li>The purpose of China's military demonstration was to secure the legitimacy of Xi Jinping's extended rule during the politically sensitive lead-up to the 20th Party Congress. The exercises also served to rehearse operational scenarios for a potential Taiwan blockade.</li>
+      <li>China has significantly expanded its Anti-Access/Area Denial (A2/AD) capabilities, yet these remain fundamentally defensive. In an invasion aimed at unification, <strong>the military costs China would bear would exceed those of the United States.</strong></li>
+      <li>If conflict with U.S. forces occurred, the battlespace would encompass China's South and East China Seas, meaning <strong>China—more dependent on foreign trade—would face far greater economic opportunity costs</strong> from disrupted sea lanes.</li>
+      <li>If China opts for invasion, it would most likely pursue a <strong>swift, decisive "blitzkrieg" strategy</strong> to neutralize Taiwanese resistance quickly. Whether an invasion actually occurs will ultimately be determined by U.S. and allied military strength and the cohesion of the international community.</li>
+      <li>Despite the high costs, China regards unification as a historical mission. With dwindling tools to restrain Taiwan's pro-U.S. alignment, <strong>the possibility of a Chinese invasion of Taiwan cannot be categorically dismissed.</strong></li>
+    </ul>
+    </section>
+  </div><!-- /toc-page -->
+
+  <!-- ═══ SECTION 1 ═══ -->
+  <section class="section-block" id="section1">
+    <div class="section-title">
+      <div class="section-num">1</div>
+      <h2>Cross-Strait Relations through the Lens of the 4th Taiwan Strait Crisis</h2>
+    </div>
+
+    <h3 class="subsection">1. Taiwan's Political and Security Landscape</h3>
+
+    <h4 class="subsubsection">1) The Framework of Cross-Strait Relations</h4>
+    <ul class="body-bullets">
+      <li>Within the structural context of U.S.-China strategic competition, Taiwan's strategic value has risen across three dimensions: geopolitical security importance, geo-economic importance tied to the semiconductor industry and supply chains, and significance as a symbol of democratic values and identity.</li>
+      <li>In pursuing its Indo-Pacific strategy, the United States has leveraged Taiwan as a pressure point against China. Meanwhile, the DPP government of President Tsai Ing-wen has pursued a bandwagoning strategy with the U.S. to escape China's diplomatic isolation and communication freeze.</li>
+      <li>The Xi Jinping administration—seeking to legitimize its extended rule—has shifted its Taiwan policy from passive prevention of independence to an active stance willing to employ non-peaceful means to achieve unification, intensifying military threats through gray zone tactics.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="dash-bullet">This marks a reversal from Beijing's historically passive posture aimed merely at preventing formal separatism.</li>
+        </ul>
+      </li>
+      <li>The U.S. Council on Foreign Relations classified the Taiwan Strait as a <strong>"Tier 1"</strong> armed conflict risk zone in its 2021 and 2022 Preventive Priorities Survey reports.</li>
+      <li>Analysts assess that in the event of armed conflict in the Taiwan Strait, the United States would struggle to suppress China decisively and could prevail only by committing more than 80% of its total military power—underscoring the paramount importance of deterrence.</li>
+    </ul>
+
+    <h4 class="subsubsection">2) The U.S. Stance</h4>
+    <ul class="body-bullets">
+      <li>As the military balance in the Taiwan Strait tilts toward China and Chinese military activity has sharply increased, debate has emerged in Washington over whether to shift from longstanding <strong>"strategic ambiguity"</strong> to <strong>"strategic clarity."</strong></li>
+      <li>For three decades, the United States has relied on strategic ambiguity to pursue "dual deterrence"—simultaneously discouraging ▲China's pursuit of non-peaceful unification and ▲Taiwan's declaration of legal independence. Since President Tsai Ing-wen's election in 2016, China's military pressure has steadily intensified as the cross-strait military balance has tilted.</li>
+      <li>Questions have since arisen about whether strategic ambiguity can still prevent war, amid growing doubts about U.S. willingness to intervene and its military superiority in a Taiwan contingency.</li>
+      <li>Some in Washington argue for transitioning to strategic clarity, which would ▲unambiguously signal U.S. military willingness to intervene to China, and ▲bolster Taiwan's own confidence and will to defend itself.</li>
+      <li>Because such a transition offers limited practical gains, the Biden administration has instead pursued an <strong>"upgraded strategic ambiguity 2.0"</strong>—combining presidential affirmations of willingness to defend Taiwan with simultaneous State Department restatements of the unchanged One China policy, aiming to deter Chinese military provocation and prevent miscalculation.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">Supporting Taiwan's participation in international forums while maintaining opposition to formal independence.</li>
+        </ul>
+      </li>
+      <li>Given rising public support for U.S. military intervention in a Taiwan contingency, the Biden administration is likely to maintain a tough posture toward China ahead of the November midterm elections.
+        <div class="callout">
+          A 2021 report by <em>The Chicago Council on Global Affairs</em> found that 52% of respondents—including 60% of Republicans and 50% of Democrats—supported U.S. military intervention in a Taiwan contingency, a record high.
+        </div>
+      </li>
+    </ul>
+
+    <h4 class="subsubsection">3) China's Stance</h4>
+    <ul class="body-bullets">
+      <li>Unlike the United States, which focuses on Taiwan's strategic value, China views Taiwan through the lens of <strong>historical mission</strong>—protecting territorial integrity from external encroachment and fulfilling the goal of national reunification. Unifying Taiwan, the last vestige of the "century of humiliation" (百年國恥), is understood as the realization of the Chinese nation's aspirations and the "great rejuvenation" that defines the Xi era.</li>
+      <li>Taiwan also holds critical strategic value beyond historical imperatives. If China controlled Taiwan—positioned at the vanguard of the First Island Chain—it could <strong>project influence not only across the South China Sea but into the Western Pacific</strong> (Figure 1).</li>
+    </ul>
+
+    <!-- Figure 1 – moved up -->
+    <div class="figure-wrap">
+      <img src="Figure1.png" alt="Figure 1 — China's First and Second Island Chains" style="width:300px; height:auto; margin:0 auto; display:block;">
+      <div class="figure-source">Source: Council on Geostrategy</div>
+      <div class="figure-caption">Figure 1 — China's First and Second Island Chains</div>
+    </div>
+
+    <!-- Page break before "If China absorbed Taiwan" -->
+    <div style="page-break-before: always;"></div>
+    <ul class="body-bullets">
+      <li>If China absorbed Taiwan and its crown jewel TSMC, it could <strong>neutralize U.S. efforts to restructure the semiconductor supply chain.</strong>
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">By securing advanced non-memory semiconductor technology and emerging as a dominant supply chain actor, China could render U.S. efforts to exclude it from the semiconductor ecosystem untenable to American allies.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="subsection">2. Military Significance of the 4th Taiwan Strait Crisis</h3>
+    <ul class="body-bullets">
+      <li>In response to Speaker Pelosi's visit, China launched high-intensity military exercises, issuing a sweeping warning to pro-independence forces and publicly reaffirming its will to achieve unification.</li>
+      <li>The exercises, which encircled Taiwan in a blockade formation, went well beyond a symbolic show of displeasure—they functioned as a live rehearsal of <strong>operational scenarios for a forcible military takeover of Taiwan.</strong></li>
+    </ul>
+
+    <!-- Figures 2 & 3 -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; margin: 20px 0;">
+      <div style="flex:1; min-width:240px;">
+        <img src="Figure2.png" alt="Figure 2 — China's Taiwan Encirclement Military Exercises" style="width:280px; height:auto; display:block; margin:0 auto;">
+        <div class="figure-source">Source: Reuters</div>
+        <div class="figure-caption">Figure 2 — China's Taiwan Encirclement Military Exercises</div>
+      </div>
+    </div>
+
+    <ul class="body-bullets">
+      <li>The positioning of China's Taiwan encirclement exercises (Figure 2) indicates an intent to intercept U.S. forces entering from Taiwan's southwest (South China Sea) and east (Western Pacific), while cutting off U.S. assets deploying from the Korean Peninsula and Japan to the northeast.</li>
+      <li>Following the Taiwan exercises, China conducted live-fire drills in the Yellow Sea—interpreted as a counter to U.S. deterrence operations by USFK and USFJ, as well as a rehearsal for blocking U.S. reinforcements to Taiwan in a contingency.</li>
+      <li class="arrow-bullet">A U-2 reconnaissance aircraft was confirmed to have flown from Osan Air Base over the Taiwan Strait—carrying significant implications for South Korea as discussions about expanding USFK's regional role continue.</li>
+      <li>This crisis vividly demonstrated that a Taiwan contingency could escalate into a broader Northeast Asian crisis, and that <strong>forcible unification remains a live option in China's strategic playbook.</strong></li>
+    </ul>
+  </section>
+
+  <!-- ═══ SECTION 2 ═══ -->
+  <section class="section-block" id="section2">
+    <div class="section-title">
+      <div class="section-num">2</div>
+      <h2>Military Costs of Invading Taiwan</h2>
+    </div>
+
+    <h3 class="subsection">1. Military Costs: The Protracted War Scenario</h3>
+    <ul class="body-bullets">
+      <li>As U.S.-China tensions intensify, the United States has expanded support for Taiwan while nominally respecting the One China principle. China, suspicious of U.S. intentions, calculates that delay makes unification increasingly difficult.</li>
+      <li>However, if China attempts to unify Taiwan by force, it would absorb considerable losses. Failing to conclude the invasion rapidly would render conflict with U.S. forces inevitable—potentially involving carrier strike groups and strategic assets based in Guam, the Philippines, Japan, and South Korea.</li>
+      <li>A <em>RAND Corporation</em> report analyzing the losses a U.S.-China war would inflict on both sides modeled military capability degradation for each country based on China's A2/AD capabilities.</li>
+    </ul>
+
+    <!-- Figure 4 -->
+    <div class="figure-wrap">
+      <img src="Figure 4.png" alt="Figure 4 — Projected Military Capability Losses in a US-China War" style="max-width:580px; width:100%; margin:0 auto; display:block;">
+      <div class="figure-source">Source: Gompert et al. (2016). <em>War with China: Thinking through the unthinkable.</em> RAND Corporation.</div>
+      <div class="figure-caption">Figure 4 — Projected Military Capability Losses in a US-China War</div>
+    </div>
+
+    <ul class="body-bullets">
+      <li>In simulations using 2015 and 2025 as war-onset dates, U.S. military losses surge significantly in the 2025 scenario compared to 2015 (Figure 4). However, <strong>Chinese military losses are far greater than American losses</strong>—and the gap would be wider still, given that allied U.S. assets were excluded from the model.</li>
+    </ul>
+
+    <h3 class="subsection">2. Military Costs: The "Blitzkrieg" Scenario</h3>
+    <ul class="body-bullets">
+      <li>China aims to become the world's preeminent power—a "modern socialist state"—by 2049, the centennial of the People's Republic.</li>
+      <li>The PLA has set a series of military modernization targets, including the capability to enter the Western Pacific, occupy Taiwan, and confront U.S. forces.</li>
+      <li>An invasion of Taiwan would risk delaying these goals, and China lacks firm confidence it could actually secure the island. It would also face cascading effects: international censure, geopolitical constraints, and potential great-power military intervention.</li>
+      <li>Nevertheless, if China could end the war as quickly as possible, the burdens of a military campaign could be minimized.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">China might pursue a <strong>"blitzkrieg" strategy</strong>—collapsing organized Taiwanese resistance and annihilating separatist forces in the shortest possible time to seize the entire island and force unconditional surrender.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4 class="subsubsection">2) PLA Military Capabilities for a Blitzkrieg</h4>
+    <ul class="body-bullets">
+      <li>The success of a blitzkrieg hinges on how effectively China can project power <strong>onto Taiwan and across the Taiwan Strait.</strong></li>
+      <li>The PLA is rapidly building the forces needed to occupy Taiwan but still falls short. Key deficiencies critical to a blitzkrieg include: ▲insufficient number of brigades; ▲inadequate joint operations and logistics capabilities; ▲insufficient forces to interdict U.S. support (narrow carrier battle group early-warning coverage, limited aerial refueling capacity, restricted maritime surveillance/tracking range).</li>
+      <li>Taiwan's military holds notable advantages: early warning systems, joint strike capabilities against China's eastern coastline, and strong air defenses—overall, Taiwan's defensive posture is assessed as robust.</li>
+      <li class="arrow-bullet">China's capabilities are currently insufficient, but critical gaps are being filled rapidly. Once Beijing believes sufficient forces are in place, the possibility of choosing the military option cannot be ruled out.</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SECTION 3 ═══ -->
+  <section class="section-block" id="section3">
+    <div class="section-title">
+      <div class="section-num">3</div>
+      <h2>Economic Costs of Invading Taiwan</h2>
+    </div>
+
+    <h3 class="subsection">1. Economic Costs of an Invasion</h3>
+    <ul class="body-bullets">
+      <li>The same RAND report concludes that China would also be far more economically vulnerable than the United States (Figure 5).</li>
+    </ul>
+
+    <!-- Figure 5 -->
+    <div class="figure-wrap">
+      <img src="Figure5.png" alt="Figure 5 — Projected Economic Losses in a US-China War" style="max-width:560px; width:100%; margin:0 auto; display:block;">
+      <div class="figure-source">Source: Gompert et al. (2016). <em>War with China: Thinking through the unthinkable.</em> RAND Corporation.</div>
+      <div class="figure-caption">Figure 5 — Projected Economic Losses in a US-China War (GDP %)</div>
+    </div>
+
+    <ul class="body-bullets">
+      <li>China's higher dependence on foreign trade relative to the United States means that if fighting occurs in the Taiwan Strait and Western Pacific, disrupted sea lanes would severely impact China's regional and international trade.</li>
+      <li>Aggregating trade volume decline, domestic consumption decline, and FDI inflow decline, the RAND model projects: <strong>U.S. GDP would fall 5–10%; China's GDP would fall 25–35%.</strong></li>
+      <li>In the event of an invasion, China cannot be confident of victory, and its expected losses are overwhelmingly larger than those the United States would bear.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="dash-bullet">This does not simply imply U.S. superiority. By comparison, U.S. GDP contracted just −0.3% in 2008 and −2.4% in 2009 during the global financial crisis. A projected 5–10% decline would therefore represent an enormous burden for the United States as well.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 class="subsection">2. The Effect of Economic Retaliation Against Taiwan</h3>
+    <ul class="body-bullets">
+      <li>With full-scale war against U.S. forces projecting massive losses and a rapid conquest of Taiwan proving difficult, China has resorted to economic retaliation—yet in doing so, <strong>China's own vulnerabilities have been exposed.</strong></li>
+      <li>Beginning August 3, China banned imports of certain citrus products (grapefruit, oranges), some seafood (chilled hairtail, mackerel), and certain processed foods from Taiwan. China also banned exports of natural sand to Taiwan, a material used in construction and as a semiconductor wafer substrate.</li>
+      <li>The export-to-China dependency ratios—hairtail (100%), citrus (80%), frozen mackerel (50%)—reveal that China carefully selected high-impact items. However, Chinese natural sand accounts for only 2% of Taiwan's total sand imports.</li>
+      <li><strong>Notably, semiconductors and electronics—Taiwan's most critical economic sectors—were entirely excluded from sanctions.</strong> The excluded items represent over 80% of Taiwan's China-directed export value.</li>
+      <li>China's economic retaliation has targeted a narrow range of agricultural products that constitute a negligible share of Taiwan's overall economy—<strong>amounting to largely symbolic sanctions</strong> (Figure 6).</li>
+    </ul>
+
+    <!-- Figure 6: Taiwan Industrial Structure -->
+    <div class="figure-wrap">
+      <img src="figure6-taiwan-industrial-structure.png" alt="Figure 6 — Taiwan's Industrial Structure Trend" style="max-width:600px; width:100%; margin:0 auto; display:block;">
+      <div class="figure-source">Source: KOTRA</div>
+      <div class="figure-caption">Figure 6 — Taiwan's Industrial Structure Trend (Unit: %)</div>
+    </div>
+
+    <ul class="body-bullets">
+      <li>In the current climate—where U.S.-China tensions and China's zero-COVID policy have reduced China's investment attractiveness—sanctioning Taiwan's core electronics and machinery industries could accelerate Taiwanese firms' capital flight from China, imposing heavy costs on Beijing as well.</li>
+      <li>Taiwan's greatest vulnerability is TSMC, the heart of its semiconductor industry. Yet since TSMC's products account for over 30% of China's semiconductor imports, <strong>Taiwan's Achilles' heel is equally China's Achilles' heel.</strong></li>
+      <li>TSMC announced in 2021 the expansion of its automotive chip plant in Nanjing, China—but using only 28nm process technology, not sub-10nm advanced nodes.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">This is a deliberate strategy: providing enough access to sustain economic interdependence while withholding core technology to prevent over-dependence on China—preserving leverage in cross-strait relations.</li>
+        </ul>
+      </li>
+      <li>For China, which urgently needs semiconductor technology, <strong>economic coercion is functioning as a centrifugal force pushing Taiwan closer to the United States</strong>—the opposite of the centripetal force needed to draw Taiwan toward Beijing.</li>
+      <li>As semiconductors become strategic assets, Taiwan is in a position to exercise leverage over China. TSMC is also pursuing construction of 20 new semiconductor facilities in Taiwan, including at Tainan.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">Beyond resolving the 2021 chip shortage, this ensures that if Taiwan were attacked, the world could not remain a passive observer.</li>
+        </ul>
+      </li>
+      <li>China—needing leverage to pressure Taiwan away from the "One China" framework—finds itself constrained to symbolic sanctions by Taiwan's own technological strength. <strong>The harder China pushes coercive measures, the more it loses initiative in cross-strait relations.</strong></li>
+    </ul>
+  </section>
+
+  <!-- ═══ SECTION 4 ═══ -->
+  <section class="section-block" id="section4">
+    <div class="section-title">
+      <div class="section-num">4</div>
+      <h2>Outlook for the Taiwan Strait Crisis and Implications for the Korean Peninsula</h2>
+    </div>
+
+    <h3 class="subsection">1. Outlook for the Taiwan Strait Crisis</h3>
+    <ul class="body-bullets">
+      <li>Experts across countries point to several potential windows for armed conflict: <strong>2027</strong> (the PLA's centennial and the final year of Xi Jinping's third term); <strong>2028–2030</strong> (when China's GDP is projected to surpass that of the United States); and <strong>around 2049</strong> (the centennial of the People's Republic).</li>
+      <li>What matters more than specific dates is how the following variables evolve: <strong>the U.S.-China military gap, China's technological rise, and U.S. resolve to defend Taiwan.</strong></li>
+      <li><strong>(Military Gap)</strong> China seeks to achieve defense modernization—including the capability to match U.S. forces in the Western Pacific—by 2035, and to compete globally by 2050.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">With China already assessed to have acquired initial invasion capabilities, its A2/AD capacity and near-seas operational capabilities will continue to grow over time.</li>
+        </ul>
+      </li>
+      <li><strong>(Technology Gap)</strong> China's biggest weakness remains semiconductor technology. SMIC (Semiconductor Manufacturing International Corporation)—China's "TSMC equivalent"—is growing rapidly, but China's major firms still heavily depend on TSMC for advanced mobile SoCs and sub-10nm processes.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="arrow-bullet">Deep dependence on Taiwanese firms for semiconductors indispensable for future technologies <strong>serves as a deterrent against Chinese military action.</strong></li>
+          <li class="arrow-bullet">However, if China's semiconductor industry matures and becomes a dominant hub for supply and consumption, a leverage reversal between China and Taiwan is possible.</li>
+        </ul>
+      </li>
+      <li><strong>(U.S. Resolve to Defend Taiwan)</strong> Deterrence failure in the Taiwan Strait is most likely to originate from Chinese leaders <strong>misreading U.S. capabilities and intentions.</strong></li>
+      <li>China could conclude that: the uncertainty of a direct military confrontation with the U.S. is manageable; economic damage to China would be limited; and the likelihood of a coalition forming to contain a war-initiating China is low.</li>
+      <li>While Taiwan is an important U.S. partner, if domestic political pressures lead China to miscalculate that U.S. resolve and capacity to defend Taiwan are lacking, the probability of an invasion rises sharply.</li>
+    </ul>
+
+    <h3 class="subsection">2. Implications for the Korean Peninsula</h3>
+
+    <h4 class="subsubsection">1) South Korea's Risk of Entanglement in a Taiwan Strait Crisis</h4>
+    <div class="quote-block">
+      "USFK is in a position to provide the Indo-Pacific Commander with a range of options in addressing offshore contingencies and regional threats. I will advocate for including USFK capabilities in Indo-Pacific Command contingency and operational plans."
+      <span class="attribution">— General Paul Joseph LaCamera, Commander, U.S. Forces Korea (U.S. Senate Armed Services Committee Confirmation Hearing)</span>
+    </div>
+    <ul class="body-bullets">
+      <li>USFK is simultaneously a component of U.S. military power and a force stationed in South Korea. If USFK becomes involved in a U.S.-China military clash, <strong>South Korea could be drawn into the conflict.</strong></li>
+      <li>Deploying USFK forces beyond the Korean Peninsula at U.S. discretion is known as "strategic flexibility"—this was a major point of contention in U.S.-ROK relations during the Roh Moo-hyun administration.</li>
+      <li>That controversy was broadly resolved with the understanding that "USFK will not, contrary to the will of the Korean people, be involved in regional conflicts in Northeast Asia," but interpretations diverge.
+        <ul class="body-bullets" style="margin-top:6px;">
+          <li class="dash-bullet">President Roh stated: "USFK cannot be mobilized without ROK government consent." The Bush administration countered: "How U.S. forces are used is a matter of U.S. sovereign authority."</li>
+        </ul>
+      </li>
+      <li>If USFK and USFJ become involved in armed conflict in the Taiwan Strait, China would regard South Korea and Japan as adversaries—and complications would deepen further if North Korean factors enter the equation.</li>
+      <li>Furthermore, in the event of conflict in this region, <strong>South Korea and Japan—which import virtually all their energy by sea—would face sharply higher maritime logistics costs,</strong> with severe negative impacts on both economies and on foreign investor sentiment across East Asia.</li>
+    </ul>
+
+    <h4 class="subsubsection">2) South Korea's Response and Assessment</h4>
+    <ul class="body-bullets">
+      <li>South Korea's hedging strategy aims to balance economic and security interests simultaneously—but several important caveats apply.</li>
+      <li><strong>First,</strong> simply maintaining strategic ambiguity risks degrading South Korea's standing within the U.S. alliance and Indo-Pacific partnerships. <strong>South Korea must proactively articulate a clear position.</strong></li>
+      <li><strong>Second,</strong> in a Taiwan contingency, South Korea would face unavoidable pressure to provide at minimum some logistical support. The critical variables will be how forcefully Washington makes that demand and how far the United States pushes its strategic requirements.</li>
+      <li>The Biden administration is pressing China hard on human rights, democracy, the South China Sea, the East China Sea, and Taiwan—yet a complete U.S.-China decoupling over the long term remains improbable. Driving the Taiwan issue toward catastrophic conflict does not serve either side's interests; ultimately, <strong>deterrence of war must remain the central objective of U.S. policy.</strong></li>
+      <li>Accordingly, South Korea should make it clear at every international opportunity that <strong>peace and stability in the Taiwan Strait is a vital South Korean national interest.</strong> At the governmental level, South Korea should coordinate Taiwan contingency scenarios through strategic dialogue with the United States.</li>
+      <li>The Taiwan dispute is not a simple regional conflict—it can constrain the strategic decision-making space of South Korean firms operating in China. South Korea should factor in the likelihood that the United States will continue to press the Taiwan issue to discourage Korean bandwagoning toward China, and calibrate its China market entry strategy accordingly.</li>
+    </ul>
+  </section>
+
+</div><!-- /container -->
+
+
+<!-- ═══ CHARTS (Chart.js) ═══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// Figures 4, 5, and 6 are now static PNG images
+
+</script>
+
+</body>
+</html>
